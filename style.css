@@ -38,6 +38,8 @@ button { font: inherit; cursor: pointer; }
 
 html { scroll-behavior: smooth; }
 
+html, body { max-width: 100%; overflow-x: hidden; }
+
 body {
   font-family: var(--corps);
   font-size: 16px;
@@ -63,6 +65,9 @@ body {
   margin-inline: auto;
   padding-inline: var(--gout);
 }
+
+/* Les éléments larges ne doivent jamais élargir la page */
+img, svg, table, pre { max-width: 100%; }
 
 .bloc { padding-block: var(--sect-y); }
 .bloc--lavis  { background: var(--bleu-lavis); }
@@ -165,6 +170,7 @@ h3 { font-size: 20px; }
 .marque { display: flex; align-items: center; gap: 12px; text-decoration: none; flex: 0 0 auto; }
 .marque__logo { height: 64px; width: auto; }
 .marque__nom {
+  white-space: nowrap;
   font-family: var(--titre);
   font-size: 18px;
   color: var(--bleu);
@@ -398,4 +404,42 @@ h3 { font-size: 20px; }
 
 @media (max-width: 620px) {
   .legal dl > div { grid-template-columns: 1fr; gap: 3px; }
+}
+
+
+/* --- 11. CORRECTIFS MOBILE ------------------------------------ */
+
+@media (max-width: 720px) {
+  :root {
+    --entete: 68px;
+    --gout: 18px;
+  }
+
+  /* L'en-tête ne conserve que le logo, l'icône téléphone et le menu.
+     Le bouton devis reste accessible via la barre fixe du bas. */
+  .entete__actions .btn { display: none; }
+  .entete__inner { gap: 12px; }
+  .marque { gap: 9px; }
+  .marque__logo { height: 40px; }
+  .marque__nom { font-size: 14px; letter-spacing: 0.01em; }
+
+  .nav { padding-bottom: 16px; }
+
+  /* Titres et textes resserrés */
+  h1 { font-size: clamp(28px, 8vw, 34px); }
+  h2 { font-size: clamp(24px, 6.5vw, 30px); }
+  .chapo { font-size: 15.5px; }
+  body { font-size: 15px; }
+
+  /* Les tableaux larges défilent au lieu d'élargir la page */
+  .tableau { display: block; overflow-x: auto; white-space: normal; }
+  .tableau thead th { white-space: nowrap; }
+
+  /* Boutons pleine largeur, plus faciles à toucher */
+  .btn { padding: 14px 24px; }
+}
+
+@media (max-width: 420px) {
+  .marque__nom { display: none; }
+  .marque__logo { height: 42px; }
 }
