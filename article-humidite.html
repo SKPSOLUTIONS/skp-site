@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Humidité : remontée capillaire, infiltration ou condensation ? | SKP Solutions</title>
+<meta name="description" content="Trois causes, trois traitements. Les signes qui permettent de les distinguer et les erreurs de traitement qui aggravent le problème dans le bâti ancien.">
+<link rel="canonical" href="https://www.skp-solutions.fr/article-humidite.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Styles propres à un article ===== */
+
+.tete-article { background: var(--bleu); color: var(--blanc); padding-block: 64px 56px; }
+.tete-article h1 { max-width: 20ch; margin-bottom: 18px; }
+.tete-article .chapo { color: rgba(255,255,255,0.75); max-width: 68ch; }
+.tete-article .surtitre { color: rgba(255,255,255,0.6); }
+.tete-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.16);
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+.tete-article__meta span { display: flex; align-items: center; gap: 8px; }
+
+.fil { font-size: 13.5px; margin-bottom: 22px; color: rgba(255,255,255,0.55); }
+.fil a { color: rgba(255,255,255,0.75); text-decoration: none; }
+.fil a:hover { color: var(--blanc); text-decoration: underline; }
+
+/* -- Corps de l'article -- */
+.article { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
+
+.texte { max-width: 70ch; }
+.texte > * + * { margin-top: 20px; }
+.texte h2 {
+  font-size: 28px;
+  margin-top: 48px;
+  padding-top: 8px;
+  scroll-margin-top: 110px;
+}
+.texte h3 { font-size: 20px; margin-top: 32px; }
+.texte p { font-size: 16.5px; line-height: 1.78; color: var(--texte); }
+.texte strong { font-weight: 700; }
+
+.texte ul { display: grid; gap: 12px; }
+.texte ul li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.texte ul li svg { flex: 0 0 auto; margin-top: 6px; }
+
+.encadre {
+  border-left: 3px solid var(--bleu);
+  background: var(--bleu-lavis);
+  padding: 22px 26px;
+  border-radius: 0 8px 8px 0;
+}
+.encadre p { font-size: 15.5px; color: var(--texte-doux); }
+.encadre strong { color: var(--texte); }
+
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--bleu-trait);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 15px;
+}
+.tableau th {
+  background: var(--bleu-lavis);
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bleu);
+  border-bottom: 1px solid var(--bleu-trait);
+}
+.tableau td { padding: 14px 18px; border-bottom: 1px solid var(--ligne); vertical-align: top; }
+.tableau tr:last-child td { border-bottom: none; }
+.tableau td:first-child { font-weight: 700; white-space: nowrap; }
+
+/* -- Colonne latérale -- */
+.cote { position: sticky; top: 110px; display: grid; gap: 22px; }
+.cote-carte {
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  padding: 26px 24px;
+  background: var(--blanc);
+}
+.cote-carte h2 { font-size: 19px; margin-bottom: 12px; }
+.cote-carte p { font-size: 14.5px; color: var(--texte-doux); margin-bottom: 18px; }
+.cote-carte .btn { width: 100%; justify-content: center; }
+
+.sommaire-cote ul { display: grid; gap: 10px; }
+.sommaire-cote a {
+  font-size: 14.5px;
+  color: var(--texte-doux);
+  text-decoration: none;
+  display: block;
+  padding-left: 14px;
+  border-left: 2px solid var(--ligne);
+  line-height: 1.45;
+}
+.sommaire-cote a:hover { color: var(--bleu); border-left-color: var(--bleu); }
+
+/* -- Fin d'article -- */
+.signature-article {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ligne);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.signature-article img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.signature-article strong { display: block; font-size: 16px; }
+.signature-article span { font-size: 14px; color: var(--texte-doux); }
+
+.final { text-align: center; }
+.final__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+
+/* -- Responsive -- */
+@media (max-width: 980px) {
+  .article { grid-template-columns: 1fr; gap: 44px; }
+  .cote { position: static; }
+  .texte h2 { font-size: 25px; margin-top: 40px; }
+}
+@media (max-width: 620px) {
+  .tableau { font-size: 14px; }
+  .tableau th, .tableau td { padding: 11px 13px; }
+  .final__actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<a class="saut-contenu" href="#principal">Aller au contenu</a>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="entete">
+  <div class="contenu entete__inner">
+    <a class="marque" href="index.html">
+      <img class="marque__logo" src="assets/logo-skp.png" alt="">
+      <span class="marque__nom">SKP Solutions</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="qui-suis-je.html">Qui suis-je&nbsp;?</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="references.html">Références</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="tel-entete" href="tel:+33789526914" aria-label="Appeler le 07 89 52 69 14">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn--plein" href="contact.html">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ EN-TÊTE D'ARTICLE ============ -->
+<article>
+<header class="tete-article">
+  <div class="contenu">
+    <p class="fil"><a href="blog.html">Blog</a> &nbsp;/&nbsp; Pathologies</p>
+    <p class="surtitre">Pathologies</p>
+    <h1>Humidité&nbsp;: distinguer remontée capillaire, infiltration et condensation</h1>
+    <p class="chapo">Se tromper de diagnostic coûte cher et ne règle rien. Un enduit ciment posé sur une remontée capillaire aggrave la situation&nbsp;; une injection de résine sur une infiltration ne sert à rien. Voici comment faire la différence.</p>
+    <div class="tete-article__meta">
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        7 minutes de lecture
+      </span>
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Stéphane Guillain
+      </span>
+    </div>
+  </div>
+</header>
+
+<div class="bloc">
+  <div class="contenu article">
+    <div class="texte">
+
+      <p>
+        C'est l'erreur qui coûte le plus cher dans le bâti ancien&nbsp;: traiter une infiltration comme une remontée capillaire, ou l'inverse. Dans les deux cas on paie des travaux, et dans les deux cas le problème revient.
+      </p>
+      <p>
+        Ces deux phénomènes n'ont ni la même origine, ni la même signature visuelle, ni le même traitement. Voici comment les distinguer.
+      </p>
+
+      <h2 id="capillarite">La remontée capillaire</h2>
+      <p>
+        L'eau du sol monte dans le mur par capillarité, comme dans un sucre trempé dans le café. Elle se produit sur les murs en contact avec un sol humide et dépourvus de coupure de capillarité — ce qui est le cas de la quasi-totalité du bâti antérieur aux années 1950.
+      </p>
+      <p><strong>Ce qui la signale&nbsp;:</strong></p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une auréole <strong>horizontale et régulière</strong> en bas de mur, à hauteur assez constante — souvent entre 50 cm et 1,50 m.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Du salpêtre&nbsp;: dépôt blanc pulvérulent, cristaux en surface, enduit qui se décolle en plaques.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une présence permanente, qui varie peu avec la météo mais s'accentue en saison humide.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une localisation sur les murs enterrés, en contact avec un talus, ou côté nord.</span></li>
+      </ul>
+
+      <h2 id="infiltration">L'infiltration</h2>
+      <p>
+        L'eau entre par un défaut ponctuel de l'enveloppe&nbsp;: toiture, façade, menuiserie, réseau enterré. Elle suit ensuite un chemin qui n'est pas forcément vertical, ce qui explique que le point d'apparition soit souvent éloigné du point d'entrée.
+      </p>
+      <p><strong>Ce qui la signale&nbsp;:</strong></p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une tache <strong>localisée et irrégulière</strong>, souvent en hauteur ou en plafond, aux contours nets et parfois cernés d'un liseré plus foncé.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une apparition ou une aggravation nette après une pluie, en particulier avec du vent d'une direction donnée.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une proximité avec un point singulier&nbsp;: cheminée, solin, rive de toiture, appui de fenêtre, descente d'eau pluviale.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une absence de salpêtre dans la plupart des cas — les sels viennent du sol, pas de la pluie.</span></li>
+      </ul>
+
+      <h2 id="condensation">Le troisième cas qu'on oublie&nbsp;: la condensation</h2>
+      <p>
+        Une part importante des problèmes d'humidité que je constate n'est ni l'un ni l'autre. C'est de la condensation, c'est-à-dire de la vapeur d'eau produite à l'intérieur du logement qui se dépose sur les surfaces froides.
+      </p>
+      <p>
+        Elle se reconnaît à des moisissures noires ponctuelles dans les angles de murs, derrière les meubles plaqués contre un mur extérieur, sur les tableaux de fenêtres, et dans les pièces d'eau. Elle est saisonnière, marquée l'hiver, et concerne particulièrement les logements bien isolés mais mal ventilés.
+      </p>
+      <div class="encadre">
+        <p>
+          <strong>Le cas typique&nbsp;:</strong> une maison ancienne dont on a changé toutes les menuiseries pour du double vitrage étanche, sans installer de ventilation. L'humidité produite par les occupants — cuisine, douches, séchage du linge, respiration — ne sort plus. Les moisissures apparaissent dans l'année.
+        </p>
+      </div>
+
+      <h2 id="tableau">Le tableau de comparaison</h2>
+      <table class="tableau">
+        <thead><tr><th>Critère</th><th>Capillarité</th><th>Infiltration</th><th>Condensation</th></tr></thead>
+        <tbody>
+          <tr><td>Forme</td><td>Bande horizontale régulière</td><td>Tache localisée irrégulière</td><td>Points et angles, moisissures</td></tr>
+          <tr><td>Hauteur</td><td>Bas de mur</td><td>Variable, souvent haute</td><td>Angles, tableaux, plafonds froids</td></tr>
+          <tr><td>Salpêtre</td><td>Fréquent</td><td>Rare</td><td>Absent</td></tr>
+          <tr><td>Saisonnalité</td><td>Permanente</td><td>Liée aux pluies</td><td>Hivernale</td></tr>
+          <tr><td>Traitement</td><td>Drainage, coupure, enduit perspirant</td><td>Reprise du défaut d'enveloppe</td><td>Ventilation, traitement des ponts thermiques</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="erreurs">Les erreurs de traitement les plus coûteuses</h2>
+      <p>
+        <strong>L'enduit ciment sur un mur ancien.</strong> Il bloque l'évaporation. L'eau ne disparaît pas&nbsp;: elle monte plus haut, ou ressort là où elle peut, souvent à l'intérieur. C'est l'aggravation la plus fréquente que je constate.
+      </p>
+      <p>
+        <strong>Le doublage plaqué sans lame d'air.</strong> On masque le problème quelques mois, puis les moisissures se développent derrière la plaque, hors de vue, sur l'isolant.
+      </p>
+      <p>
+        <strong>L'injection de résine sans diagnostic préalable.</strong> Le procédé peut être pertinent contre les remontées capillaires. Appliqué sur une infiltration ou une condensation, il ne sert strictement à rien — et il se vend cher.
+      </p>
+      <p>
+        <strong>La peinture anti-humidité.</strong> Elle masque la trace, pas la cause. Le désordre réapparaît, en général plus haut.
+      </p>
+
+      <h2 id="methode">Ce que je fais pour trancher</h2>
+      <p>
+        Je commence toujours par l'observation de la géométrie du désordre et de son contexte&nbsp;: nature du sol, topographie du terrain, présence de végétation, orientation, historique des travaux. Je mesure l'hygrométrie ambiante et je compare les relevés entre les pièces.
+      </p>
+      <p>
+        Ensuite, je fais parler la chronologie. Depuis quand&nbsp;? Après quels travaux&nbsp;? Après quelle météo&nbsp;? La réponse à ces trois questions oriente le diagnostic plus sûrement que n'importe quel appareil.
+      </p>
+      <p>
+        Ce n'est qu'une fois la cause identifiée que je parle de solution. Dans l'autre sens, on achète un traitement en espérant qu'il corresponde au problème.
+      </p>
+
+      <div class="signature-article">
+        <img src="assets/stephane-guillain.jpg" alt="">
+        <div>
+          <strong>Stéphane Guillain</strong>
+          <span>Expert bâtiment indépendant — 18 ans de conduite de travaux</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="cote">
+      <div class="cote-carte sommaire-cote">
+        <h2>Dans cet article</h2>
+        <ul>
+          <li><a href="#capillarite">La remontée capillaire</a></li>
+          <li><a href="#infiltration">L'infiltration</a></li>
+          <li><a href="#condensation">La condensation</a></li>
+          <li><a href="#tableau">Tableau comparatif</a></li>
+          <li><a href="#erreurs">Les erreurs coûteuses</a></li>
+          <li><a href="#methode">Ma méthode</a></li>
+        </ul>
+      </div>
+      <div class="cote-carte">
+        <h2>Un problème d'humidité chez vous&nbsp;?</h2>
+        <p>Envoyez-moi des photos et l'historique. Je vous dis si un déplacement se justifie.</p>
+        <a class="btn btn--plein" href="contact.html">Me contacter</a>
+      </div>
+    </aside>
+  </div>
+</div>
+</article>
+
+<section class="bloc bloc--encre final">
+  <div class="contenu">
+    <p class="surtitre">Votre cas est unique</p>
+    <h2>Aucun article ne remplace<br>un regard sur place.</h2>
+    <p class="chapo" style="margin-inline:auto">
+      Ces repères valent pour les situations courantes. Pour votre bien précisément, un échange de quelques minutes vaut mieux que des heures de recherche.
+    </p>
+    <div class="final__actions">
+      <a class="btn btn--blanc" href="tel:+33789526914">Appeler le 07 89 52 69 14</a>
+      <a class="btn btn--fantome" href="blog.html">Revenir au blog</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">SKP Solutions</div>
+        <p>Expertise bâtiment indépendante au service des particuliers. Loire-Atlantique, Vendée et départements limitrophes.</p>
+        <div class="reseaux">
+          <a href="https://www.linkedin.com/company/skpsolutions/" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/skp_solutions" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/18JYyt2Jcp/" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.3 0-4 1.8-4 4V12H7.5v3.5H10V22h3.5v-6.5H16L16.5 12H13.5V9.5c0-.3.2-.5.5-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul>
+          <li><a href="services.html#avant-achat">Expertise avant achat</a></li>
+          <li><a href="services.html#reception">Réception de travaux</a></li>
+          <li><a href="services.html#pathologies">Fissures &amp; humidité</a></li>
+          <li><a href="services.html#amo">Assistance maîtrise d'ouvrage</a></li>
+          <li><a href="services.html#urbanisme">Permis &amp; déclarations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Le cabinet</p>
+        <ul>
+          <li><a href="qui-suis-je.html">Qui suis-je&nbsp;?</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul>
+          <li><a href="tel:+33789526914">07 89 52 69 14</a></li>
+          <li><a href="mailto:contact@skp-solutions.fr">contact@skp-solutions.fr</a></li>
+          <li>ZA Beau Soleil<br>1 rue des Oliviers<br>44680 Sainte-Pazanne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__legal">
+      <p>SKP Solutions S.A.S.U. — capital 2 000 € — RCS Nantes 101 053 403</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre de contact fixe (mobile) -->
+<div class="barre-mobile">
+  <a class="barre-mobile__tel" href="tel:+33789526914">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="barre-mobile__devis" href="contact.html">Demander un devis</a>
+</div>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var ouvert = nav.getAttribute('data-ouvert') === 'true';
+      nav.setAttribute('data-ouvert', String(!ouvert));
+      burger.setAttribute('aria-expanded', String(!ouvert));
+      burger.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.setAttribute('data-ouvert', 'false');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

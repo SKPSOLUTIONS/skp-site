@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mes références — 13 opérations d'envergure | SKP Solutions</title>
+<meta name="description" content="La Seine Musicale, Cathédrale de la Sainte-Trinité, Morland Mixité Capitale… Les opérations conduites par Stéphane Guillain chez Bouygues Construction et VINCI Construction.">
+<link rel="canonical" href="https://www.skp-solutions.fr/references.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Styles propres à la page Références ===== */
+
+/* -- Bandeau de page -- */
+.tete-page { background: var(--bleu); color: var(--blanc); padding-block: 76px 0; }
+.tete-page h1 { max-width: 20ch; margin-bottom: 20px; }
+.tete-page .chapo { color: rgba(255,255,255,0.75); }
+.tete-page .surtitre { color: rgba(255,255,255,0.6); }
+
+.tete-page__reperes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 56px;
+  border-top: 1px solid rgba(255,255,255,0.16);
+}
+.tete-page__item { padding: 28px 26px 34px 0; border-right: 1px solid rgba(255,255,255,0.16); }
+.tete-page__item:last-child { border-right: none; }
+.tete-page__item:not(:first-child) { padding-left: 26px; }
+.tete-page__cle { font-family: var(--titre); font-size: 28px; line-height: 1; margin-bottom: 7px; }
+.tete-page__lib { font-size: 14px; color: rgba(255,255,255,0.6); }
+
+/* -- Avertissement de cadrage -- */
+.cadrage {
+  background: var(--bleu-lavis);
+  border-bottom: 1px solid var(--ligne);
+  padding-block: 26px;
+}
+.cadrage p {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  font-size: 14.5px;
+  color: var(--texte-doux);
+  max-width: 92ch;
+}
+.cadrage svg { flex: 0 0 auto; margin-top: 3px; }
+
+/* -- Grille des opérations -- */
+.ops { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+
+.op {
+  border: 1px solid var(--ligne);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--blanc);
+  display: flex;
+  flex-direction: column;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.op:hover { border-color: var(--bleu); transform: translateY(-3px); box-shadow: 0 14px 34px rgba(4,69,116,0.09); }
+
+.op__visuel {
+  aspect-ratio: 3 / 2;
+  background: var(--bleu-lavis);
+  position: relative;
+  overflow: hidden;
+}
+.op__visuel img { width: 100%; height: 100%; object-fit: cover; }
+.op__rang {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: rgba(4,69,116,0.92);
+  color: var(--blanc);
+  font-family: var(--titre);
+  font-size: 14px;
+  width: 34px; height: 34px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+}
+
+.op__corps { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.op__lieu {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+  margin-bottom: 9px;
+}
+.op h2 { font-size: 20px; line-height: 1.22; margin-bottom: 12px; }
+.op__desc { font-size: 14.5px; color: var(--texte-doux); flex: 1; }
+
+.op__mission {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ligne);
+}
+.op__role { font-size: 14px; font-weight: 700; color: var(--bleu); line-height: 1.4; }
+.op__employeur {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border: 1px solid var(--bleu-trait);
+  border-radius: 100px;
+  color: var(--texte-doux);
+}
+
+/* -- Ce que ça change pour vous -- */
+.transfert { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; }
+.transfert__item h3 { font-size: 20px; margin-bottom: 11px; }
+.transfert__item p { font-size: 15px; color: rgba(255,255,255,0.7); }
+.transfert__puce {
+  width: 42px; height: 42px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+/* -- Appel final -- */
+.final { text-align: center; }
+.final__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+
+/* -- Responsive -- */
+@media (max-width: 1080px) { .ops { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 980px) {
+  .tete-page__reperes { grid-template-columns: 1fr 1fr; }
+  .tete-page__item { border-right: none; padding: 22px 0 26px; border-bottom: 1px solid rgba(255,255,255,0.16); }
+  .tete-page__item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.16); padding-right: 22px; }
+  .tete-page__item:not(:first-child) { padding-left: 0; }
+  .tete-page__item:nth-child(even) { padding-left: 22px; }
+  .tete-page__item:nth-last-child(-n+2) { border-bottom: none; }
+  .transfert { grid-template-columns: 1fr; gap: 34px; }
+}
+@media (max-width: 620px) {
+  .ops { grid-template-columns: 1fr; }
+  .final__actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<a class="saut-contenu" href="#principal">Aller au contenu</a>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="entete">
+  <div class="contenu entete__inner">
+    <a class="marque" href="index.html">
+      <img class="marque__logo" src="assets/logo-skp.png" alt="">
+      <span class="marque__nom">SKP Solutions</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="qui-suis-je.html">Qui suis-je&nbsp;?</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="references.html" aria-current="page">Références</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="tel-entete" href="tel:+33789526914" aria-label="Appeler le 07 89 52 69 14">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn--plein" href="contact.html">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ BANDEAU DE PAGE ============ -->
+<section class="tete-page">
+  <div class="contenu">
+    <p class="surtitre">Mes références</p>
+    <h1>Treize opérations où l'erreur n'était pas permise.</h1>
+    <p class="chapo">
+      Salles de spectacle, édifices religieux, sièges sociaux, reprises en sous-œuvre en cœur de Paris. Pendant dix-huit ans, j'ai conduit des chantiers où le niveau d'exigence, de contrôle et de finition ne laissait aucune marge d'approximation. C'est ce regard que j'applique aujourd'hui à votre maison.
+    </p>
+
+    <div class="tete-page__reperes">
+      <div class="tete-page__item">
+        <div class="tete-page__cle">13</div>
+        <p class="tete-page__lib">opérations de référence</p>
+      </div>
+      <div class="tete-page__item">
+        <div class="tete-page__cle">100 à 500 M€</div>
+        <p class="tete-page__lib">budgets d'opération</p>
+      </div>
+      <div class="tete-page__item">
+        <div class="tete-page__cle">TCE</div>
+        <p class="tete-page__lib">tous corps d'état coordonnés</p>
+      </div>
+      <div class="tete-page__item">
+        <div class="tete-page__cle">18 ans</div>
+        <p class="tete-page__lib">de conduite de travaux</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CADRAGE ============ -->
+<div class="cadrage">
+  <div class="contenu">
+    <p>
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <span>Ces opérations ont été réalisées dans le cadre de mes fonctions salariées chez Bouygues Construction et VINCI Construction, avant la création de SKP Solutions. Elles illustrent mon parcours et mon niveau d'intervention&nbsp;— elles ne sont pas des réalisations de SKP Solutions.</span>
+    </p>
+  </div>
+</div>
+
+<!-- ============ OPÉRATIONS ============ -->
+<section class="bloc">
+  <div class="contenu">
+    <div class="ops">
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-01.jpg" alt="La Seine Musicale">
+          <span class="op__rang">01</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Île Seguin — Boulogne-Billancourt</p>
+          <h2>La Seine Musicale</h2>
+          <p class="op__desc">
+            Grande salle de spectacles et auditorium de 6&nbsp;200 places sur l'Île Seguin. Dôme en verre et acier, socle minéral sur berges de Seine. Une référence architecturale signée Shigeru Ban et Jean de Gastines.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Ingénieur travaux — Tous corps d'état</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-02.jpg" alt="Cathédrale de la Sainte-Trinité">
+          <span class="op__rang">02</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Quai Branly — Paris 7<sup>e</sup></p>
+          <h2>Cathédrale de la Sainte-Trinité</h2>
+          <p class="op__desc">
+            Cathédrale orthodoxe russe en cœur de Paris. Dômes dorés, façades en pierre de taille, aménagements intérieurs de très haute finition. Une opération d'exception sur un site patrimonial exposé.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Ingénieur travaux — Corps d'état techniques</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-03.jpg" alt="Morland Mixité Capitale">
+          <span class="op__rang">03</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Paris 4<sup>e</sup></p>
+          <h2>Morland Mixité Capitale</h2>
+          <p class="op__desc">
+            Reconversion de l'ancienne cité administrative en un ensemble mixte&nbsp;: logements, hôtel, bureaux, commerces et équipements. Un chantier de transformation lourde en site occupé et contraint.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Ingénieur travaux — Responsable Gros œuvre</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-04.jpg" alt="Pantin Kanal">
+          <span class="op__rang">04</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Pantin</p>
+          <h2>Pantin Kanal</h2>
+          <p class="op__desc">
+            Ensemble signé Rudy Ricciotti sur les bords du canal de l'Ourcq. Écriture architecturale exigeante, avec des zones décoratives dont la mise en œuvre ne tolérait aucun écart de finition.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Ingénieur travaux TCE — Responsable des zones décoratives</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-05.jpg" alt="La Chapelle International">
+          <span class="op__rang">05</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Paris 18<sup>e</sup></p>
+          <h2>La Chapelle International — Lot A</h2>
+          <p class="op__desc">
+            Opération majeure du renouvellement urbain du nord parisien, développée au-dessus des emprises ferroviaires. Interfaces techniques nombreuses et coordination complexe entre lots.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Ingénieur travaux TCE — Responsable des zones décoratives et techniques</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-06.jpg" alt="P17 ORA — Canon">
+          <span class="op__rang">06</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Saint-Ouen</p>
+          <h2>P17 ORA — Canon</h2>
+          <p class="op__desc">
+            Opération tertiaire d'envergure, avec pilotage des niveaux d'infrastructure et encadrement direct des sous-traitants gros œuvre sur l'ensemble du cycle de production.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Responsable des sous-traitants Gros œuvre et pilotage des niveaux d'infrastructure</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-07.jpg" alt="Siège social Klésia">
+          <span class="op__rang">07</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Cardinet-Saussure — Paris 17<sup>e</sup></p>
+          <h2>Siège social Klésia</h2>
+          <p class="op__desc">
+            Construction du siège social d'un groupe de protection sociale. Structure tertiaire de grande échelle, avec les exigences de délai et de qualité propres aux immeubles de bureaux neufs.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Conducteur de travaux — Gros œuvre</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-08.jpg" alt="Centre commercial Cergy 3 Fontaines">
+          <span class="op__rang">08</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Cergy-Pontoise</p>
+          <h2>Centre commercial Cergy 3 Fontaines</h2>
+          <p class="op__desc">
+            Restructuration d'un centre commercial majeur du Val-d'Oise. Travaux en site partiellement exploité, avec un phasage strict pour maintenir l'activité et la sécurité du public.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Ingénieur travaux — Corps d'état architecturaux</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-09.jpg" alt="Préfecture de Police">
+          <span class="op__rang">09</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Paris 4<sup>e</sup></p>
+          <h2>Préfecture de Police</h2>
+          <p class="op__desc">
+            Opération sur un bâtiment institutionnel sensible en cœur historique. Phase d'étude de prix et définition des méthodes d'exécution en amont du chantier.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Étude de prix et méthodes</p>
+            <span class="op__employeur">VINCI Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-10.jpg" alt="Mairie du 13e arrondissement">
+          <span class="op__rang">10</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Paris 13<sup>e</sup></p>
+          <h2>Mairie du 13<sup>e</sup> arrondissement</h2>
+          <p class="op__desc">
+            Réhabilitation lourde d'un bâtiment public ancien&nbsp;: reprise en sous-œuvre, désamiantage et déplombage. Le type d'opération où la connaissance des pathologies du bâti ancien est déterminante.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Conducteur de travaux — Reprise en sous-œuvre, désamiantage, déplombage</p>
+            <span class="op__employeur">VINCI Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-11.jpg" alt="Îlot Adam, Nantes">
+          <span class="op__rang">11</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Nantes</p>
+          <h2>Îlot Adam</h2>
+          <p class="op__desc">
+            Opération immobilière nantaise mêlant corps d'état techniques et architecturaux, avec la coordination d'ensemble des interfaces entre lots.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Responsable corps d'état techniques et architecturaux</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-12.jpg" alt="Campus Heinlex">
+          <span class="op__rang">12</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Saint-Nazaire</p>
+          <h2>Campus Heinlex</h2>
+          <p class="op__desc">
+            Équipement d'enseignement supérieur en Loire-Atlantique. Pilotage global de l'opération, de la préparation du chantier jusqu'à la livraison.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Responsable d'opération</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="op">
+        <div class="op__visuel">
+          <img src="assets/ref-13.jpg" alt="CMPR Saint-Jacques">
+          <span class="op__rang">13</span>
+        </div>
+        <div class="op__corps">
+          <p class="op__lieu">Nantes — Saint-Jacques</p>
+          <h2>CMPR Saint-Jacques</h2>
+          <p class="op__desc">
+            Centre de médecine physique et de réadaptation. Bâtiment de santé aux contraintes réglementaires et techniques élevées, conduit en tous corps d'état.
+          </p>
+          <div class="op__mission">
+            <p class="op__role">Ingénieur travaux — Tous corps d'état</p>
+            <span class="op__employeur">Bouygues Construction</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CE QUE ÇA CHANGE ============ -->
+<section class="bloc bloc--encre">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Et pour votre maison&nbsp;?</p>
+      <h2>Ce que ces chantiers ont changé<br>dans ma façon de regarder un bâtiment</h2>
+      <p class="chapo">
+        Une maison individuelle n'est pas une salle de spectacle. Mais les mécanismes de la construction, eux, sont les mêmes&nbsp;— simplement à une autre échelle.
+      </p>
+    </div>
+
+    <div class="transfert">
+      <div class="transfert__item">
+        <span class="transfert__puce">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+        </span>
+        <h3>Je sais où ça se cache</h3>
+        <p>
+          Sur ces opérations, un défaut non vu en cours d'exécution devient un litige à sept chiffres. On apprend vite à regarder les jonctions, les points singuliers et les reprises&nbsp;— exactement là où les malfaçons se logent chez vous aussi.
+        </p>
+      </div>
+      <div class="transfert__item">
+        <span class="transfert__puce">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+        <h3>Je connais les règles opposables</h3>
+        <p>
+          NF DTU, règles de l'art, normes applicables&nbsp;: sur un chantier de cette taille, tout est vérifié et contradictoire. C'est ce référentiel que j'oppose à un constructeur qui vous explique que «&nbsp;c'est normal&nbsp;».
+        </p>
+      </div>
+      <div class="transfert__item">
+        <span class="transfert__puce">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+        </span>
+        <h3>Je sais comment ils raisonnent</h3>
+        <p>
+          J'ai été de l'autre côté de la table pendant dix-huit ans. Je connais les arguments, les délais qu'on annonce, les réserves qu'on espère voir oubliées. Ça change le déroulement d'une réception.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPEL FINAL ============ -->
+<section class="bloc bloc--lavis final">
+  <div class="contenu">
+    <p class="surtitre">Votre projet maintenant</p>
+    <h2>Cette expérience est disponible<br>pour votre maison.</h2>
+    <p class="chapo" style="margin-inline:auto">
+      Que vous achetiez, fassiez construire ou constatiez un désordre, le raisonnement est le même. Parlons-en quelques minutes.
+    </p>
+    <div class="final__actions">
+      <a class="btn btn--plein" href="tel:+33789526914">Appeler le 07 89 52 69 14</a>
+      <a class="btn btn--contour" href="services.html">Voir mes prestations</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">SKP Solutions</div>
+        <p>Expertise bâtiment indépendante au service des particuliers. Loire-Atlantique, Vendée et départements limitrophes.</p>
+        <div class="reseaux">
+          <a href="https://www.linkedin.com/company/skpsolutions/" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/skp_solutions" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/18JYyt2Jcp/" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.3 0-4 1.8-4 4V12H7.5v3.5H10V22h3.5v-6.5H16L16.5 12H13.5V9.5c0-.3.2-.5.5-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul>
+          <li><a href="services.html#avant-achat">Expertise avant achat</a></li>
+          <li><a href="services.html#reception">Réception de travaux</a></li>
+          <li><a href="services.html#pathologies">Fissures &amp; humidité</a></li>
+          <li><a href="services.html#amo">Assistance maîtrise d'ouvrage</a></li>
+          <li><a href="services.html#urbanisme">Permis &amp; déclarations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Le cabinet</p>
+        <ul>
+          <li><a href="qui-suis-je.html">Qui suis-je&nbsp;?</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul>
+          <li><a href="tel:+33789526914">07 89 52 69 14</a></li>
+          <li><a href="mailto:contact@skp-solutions.fr">contact@skp-solutions.fr</a></li>
+          <li>ZA Beau Soleil<br>1 rue des Oliviers<br>44680 Sainte-Pazanne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__legal">
+      <p>SKP Solutions S.A.S.U. — capital 2 000 € — RCS Nantes 101 053 403</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre de contact fixe (mobile) -->
+<div class="barre-mobile">
+  <a class="barre-mobile__tel" href="tel:+33789526914">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="barre-mobile__devis" href="contact.html">Demander un devis</a>
+</div>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var ouvert = nav.getAttribute('data-ouvert') === 'true';
+      nav.setAttribute('data-ouvert', String(!ouvert));
+      burger.setAttribute('aria-expanded', String(!ouvert));
+      burger.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.setAttribute('data-ouvert', 'false');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

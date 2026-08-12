@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mes prestations d'expertise bâtiment | SKP Solutions</title>
+<meta name="description" content="Expertise avant achat, réception de travaux, diagnostic fissures et humidité, assistance à maîtrise d'ouvrage, permis de construire. Stéphane Guillain, expert indépendant en Loire-Atlantique.">
+<link rel="canonical" href="https://www.skp-solutions.fr/services.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Styles propres à la page Services ===== */
+
+/* -- Bandeau de page -- */
+.tete-page {
+  background: var(--bleu);
+  color: var(--blanc);
+  padding-block: 76px 68px;
+}
+.tete-page h1 { max-width: 18ch; margin-bottom: 20px; }
+.tete-page .chapo { color: rgba(255,255,255,0.75); }
+.tete-page .surtitre { color: rgba(255,255,255,0.6); }
+
+/* -- Sommaire ancré -- */
+.sommaire {
+  border-bottom: 1px solid var(--ligne);
+  background: var(--blanc);
+  position: sticky;
+  top: var(--entete);
+  z-index: 60;
+}
+.sommaire ul {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sommaire ul::-webkit-scrollbar { display: none; }
+.sommaire a {
+  display: block;
+  white-space: nowrap;
+  padding: 18px 16px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--texte-doux);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.sommaire a:hover { color: var(--bleu); border-bottom-color: var(--bleu-trait); }
+
+/* -- Bloc prestation -- */
+.presta-bloc { padding-block: 88px; border-bottom: 1px solid var(--ligne); scroll-margin-top: 140px; }
+.presta-bloc:nth-child(even) { background: var(--bleu-lavis); }
+
+.presta-bloc__grille {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.presta-bloc__intro { position: sticky; top: 150px; }
+.presta-bloc__icone {
+  width: 54px; height: 54px;
+  border-radius: 10px;
+  background: var(--bleu);
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+.presta-bloc h2 { margin-bottom: 16px; }
+.presta-bloc__intro p { color: var(--texte-doux); }
+
+.meta { display: grid; gap: 14px; margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--bleu-trait); }
+.meta div { display: flex; gap: 12px; align-items: baseline; font-size: 14.5px; }
+.meta dt { font-weight: 700; min-width: 92px; flex: 0 0 auto; }
+.meta dd { color: var(--texte-doux); margin: 0; }
+
+/* Colonne détaillée */
+.detail h3 {
+  font-family: var(--corps);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bleu);
+  margin-bottom: 18px;
+}
+.detail + .detail { margin-top: 40px; }
+
+.liste-controle { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; }
+.liste-controle li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.liste-controle svg { flex: 0 0 auto; margin-top: 4px; }
+
+.livrable {
+  background: var(--blanc);
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  padding: 26px 28px;
+}
+.presta-bloc:nth-child(even) .livrable { background: var(--blanc); }
+.livrable ul { display: grid; gap: 11px; }
+.livrable li { display: flex; gap: 10px; font-size: 15px; align-items: flex-start; line-height: 1.55; }
+.livrable svg { flex: 0 0 auto; margin-top: 4px; }
+
+.cas {
+  margin-top: 22px;
+  padding: 20px 24px;
+  border-left: 3px solid var(--bleu);
+  background: rgba(4,69,116,0.04);
+  font-size: 15px;
+  color: var(--texte-doux);
+}
+.cas strong { color: var(--texte); font-weight: 700; }
+
+/* -- Ce qui vaut pour toutes les missions -- */
+.socle__grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; }
+.socle__item h3 { font-size: 18px; margin-bottom: 10px; }
+.socle__item p { font-size: 14.5px; color: rgba(255,255,255,0.7); }
+.socle__puce {
+  width: 40px; height: 40px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+/* -- Tarifs -- */
+.tarif {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.tarif__encart {
+  border: 1.5px solid var(--bleu-trait);
+  border-radius: 12px;
+  padding: 34px 36px;
+  background: var(--blanc);
+}
+.tarif__ligne {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--ligne);
+  font-size: 15px;
+}
+.tarif__ligne:last-of-type { border-bottom: none; }
+.tarif__ligne span:last-child { font-weight: 700; color: var(--bleu); white-space: nowrap; }
+.tarif__note { font-size: 13.5px; color: var(--texte-doux); margin-top: 18px; }
+
+/* -- Appel final -- */
+.final { text-align: center; }
+.final__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+
+/* -- Responsive -- */
+@media (max-width: 980px) {
+  .presta-bloc { padding-block: 60px; scroll-margin-top: 120px; }
+  .presta-bloc__grille { grid-template-columns: 1fr; gap: 36px; }
+  .presta-bloc__intro { position: static; }
+  .socle__grille { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .tarif { grid-template-columns: 1fr; gap: 34px; }
+  .sommaire { top: var(--entete); }
+}
+@media (max-width: 620px) {
+  .liste-controle { grid-template-columns: 1fr; }
+  .socle__grille { grid-template-columns: 1fr; }
+  .final__actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<a class="saut-contenu" href="#principal">Aller au contenu</a>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="entete">
+  <div class="contenu entete__inner">
+    <a class="marque" href="index.html">
+      <img class="marque__logo" src="assets/logo-skp.png" alt="">
+      <span class="marque__nom">SKP Solutions</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="qui-suis-je.html">Qui suis-je&nbsp;?</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="references.html">Références</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="tel-entete" href="tel:+33789526914" aria-label="Appeler le 07 89 52 69 14">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn--plein" href="contact.html">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ BANDEAU DE PAGE ============ -->
+<section class="tete-page">
+  <div class="contenu">
+    <p class="surtitre">Mes prestations</p>
+    <h1>Cinq missions, une seule logique&nbsp;: vous faire décider en connaissance de cause.</h1>
+    <p class="chapo">
+      Je n'exécute pas de travaux et je ne vends rien d'autre que mon temps et mon analyse. Vous trouverez ci-dessous ce que couvre chaque mission, ce que je contrôle réellement sur place et ce que vous recevez à la fin.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SOMMAIRE ============ -->
+<nav class="sommaire" aria-label="Sommaire des prestations">
+  <div class="contenu">
+    <ul>
+      <li><a href="#avant-achat">Expertise avant achat</a></li>
+      <li><a href="#reception">Réception de travaux</a></li>
+      <li><a href="#pathologies">Fissures &amp; humidité</a></li>
+      <li><a href="#amo">Assistance maîtrise d'ouvrage</a></li>
+      <li><a href="#urbanisme">Permis &amp; déclarations</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ 1 — AVANT ACHAT ============ -->
+<section class="presta-bloc" id="avant-achat">
+  <div class="contenu presta-bloc__grille">
+
+    <div class="presta-bloc__intro">
+      <span class="presta-bloc__icone">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </span>
+      <h2>Expertise avant achat</h2>
+      <p>
+        Vous avez visité une fois, vingt minutes, avec l'agent immobilier. C'est peu pour engager plusieurs centaines de milliers d'euros. Je reviens avec vous et je regarde le bien comme un professionnel du bâtiment&nbsp;: ce qui tient, ce qui va coûter, ce qui doit vous faire renoncer.
+      </p>
+
+      <dl class="meta">
+        <div><dt>Pour qui</dt><dd>Acquéreur particulier, avant ou pendant le délai de rétractation</dd></div>
+        <div><dt>Sur place</dt><dd>2 à 3 heures, vous pouvez m'accompagner</dd></div>
+        <div><dt>Rapport</dt><dd>Sous 7 jours ouvrés</dd></div>
+      </dl>
+    </div>
+
+    <div>
+      <div class="detail">
+        <h3>Ce que je contrôle</h3>
+        <ul class="liste-controle">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Structure, fondations, murs porteurs</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Charpente et couverture</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Fissures&nbsp;: nature, activité, gravité</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Humidité, ventilation, remontées</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Menuiseries et isolation</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Réseaux apparents et tableau électrique</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Assainissement et évacuations</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Extérieurs, terrasses, clôtures</li>
+        </ul>
+      </div>
+
+      <div class="detail">
+        <h3>Ce que j'analyse avant même de venir</h3>
+        <p style="color:var(--texte-doux);font-size:15px;">
+          Vos diagnostics obligatoires (DPE, électricité, amiante, plomb, termites), le plan cadastral, le zonage d'urbanisme, l'état des risques et l'historique de propriété. Une anomalie repérée dans un document oriente toute la visite&nbsp;— c'est souvent là que se trouvent les vraies surprises.
+        </p>
+      </div>
+
+      <div class="detail">
+        <h3>Ce que vous recevez</h3>
+        <div class="livrable">
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Un rapport écrit et photographié, désordre par désordre</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Une hiérarchisation par gravité&nbsp;: urgent, à prévoir, à surveiller</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Une estimation chiffrée des travaux, en HT et en TTC</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Une enveloppe de négociation argumentée</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Un échange téléphonique pour tout reprendre ensemble</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="cas">
+        <strong>Le bon moment, c'est avant le compromis.</strong> Vous êtes alors totalement libre de renoncer ou de renégocier. Après signature, il reste dix jours de rétractation&nbsp;: c'est jouable, mais plus tendu. Dans les deux cas, prévenez le vendeur ou l'agence qu'une seconde visite est nécessaire.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 — RÉCEPTION ============ -->
+<section class="presta-bloc" id="reception">
+  <div class="contenu presta-bloc__grille">
+
+    <div class="presta-bloc__intro">
+      <span class="presta-bloc__icone">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </span>
+      <h2>Réception de travaux</h2>
+      <p>
+        La réception est l'acte juridique le plus important de votre chantier. C'est elle qui déclenche les garanties et fige ce que vous pouvez encore exiger. Une réserve mal formulée, ou oubliée, devient très difficile à faire valoir ensuite.
+      </p>
+
+      <dl class="meta">
+        <div><dt>Pour qui</dt><dd>Maison individuelle (CCMI), VEFA, rénovation, extension</dd></div>
+        <div><dt>Sur place</dt><dd>Le jour de la réception, à vos côtés</dd></div>
+        <div><dt>Livrable</dt><dd>Liste de réserves annexée au PV</dd></div>
+      </dl>
+    </div>
+
+    <div>
+      <div class="detail">
+        <h3>Ce que je vérifie</h3>
+        <ul class="liste-controle">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Conformité au marché et aux plans</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Respect des NF DTU et des règles de l'art</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Finitions, planéité, aplombs, jeux</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Étanchéité et points singuliers</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Fonctionnement des équipements</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ventilation et isolation mises en œuvre</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cohérence avec les DOE remis</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Levée des réserves antérieures</li>
+        </ul>
+      </div>
+
+      <div class="detail">
+        <h3>Ce que vous recevez</h3>
+        <div class="livrable">
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Une liste de réserves rédigée dans les termes qui engagent l'entreprise</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Chaque réserve photographiée et localisée</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Un document annexable au procès-verbal de réception</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Un appui à la contre-visite de levée de réserves si besoin</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="cas">
+        <strong>Face au constructeur, vous n'êtes plus seul.</strong> Le jour de la réception, le rapport de force est déséquilibré&nbsp;: en face de vous, des professionnels qui font ça toutes les semaines. Ma présence change la nature de la conversation, et le vocabulaire employé.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 — PATHOLOGIES ============ -->
+<section class="presta-bloc" id="pathologies">
+  <div class="contenu presta-bloc__grille">
+
+    <div class="presta-bloc__intro">
+      <span class="presta-bloc__icone">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></svg>
+      </span>
+      <h2>Fissures et humidité</h2>
+      <p>
+        Une fissure qui s'allonge, du salpêtre au bas d'un mur, une peinture qui cloque chaque hiver. Avant de payer des travaux, il faut savoir d'où ça vient&nbsp;— sinon on traite un symptôme et le problème revient, en ayant coûté cher.
+      </p>
+
+      <dl class="meta">
+        <div><dt>Pour qui</dt><dd>Propriétaire occupant, bailleur, copropriété</dd></div>
+        <div><dt>Sur place</dt><dd>2 à 4 heures selon l'étendue des désordres</dd></div>
+        <div><dt>Rapport</dt><dd>Sous 7 à 10 jours ouvrés</dd></div>
+      </dl>
+    </div>
+
+    <div>
+      <div class="detail">
+        <h3>Ma méthode</h3>
+        <p style="color:var(--texte-doux);font-size:15px;">
+          Je ne pars jamais de la solution. J'observe le désordre, je relève sa géométrie et son évolution, je mesure l'hygrométrie, j'examine le contexte&nbsp;— nature du sol, végétation proche, historique de sécheresse, réseaux enterrés, travaux voisins. Ce n'est qu'une fois la cause identifiée que je parle de reprise.
+        </p>
+      </div>
+
+      <div class="detail">
+        <h3>Ce que je recherche</h3>
+        <ul class="liste-controle">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tassement différentiel de fondation</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Retrait-gonflement des argiles</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Remontées capillaires</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Infiltrations en toiture ou en façade</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Condensation et défaut de ventilation</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ponts thermiques et isolation défaillante</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Malfaçon d'exécution ou de conception</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Fuite de réseau enterré</li>
+        </ul>
+      </div>
+
+      <div class="detail">
+        <h3>Ce que vous recevez</h3>
+        <div class="livrable">
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>L'identification argumentée de la cause, pas seulement du symptôme</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Un avis sur l'évolutivité&nbsp;: faut-il agir maintenant ou surveiller&nbsp;?</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Les solutions de reprise possibles, chiffrées et hiérarchisées</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Un document exploitable auprès de votre assureur ou d'un artisan</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="cas">
+        <strong>Toutes les fissures ne sont pas graves.</strong> Une partie de mon travail consiste aussi à rassurer&nbsp;: un faïençage d'enduit n'a rien à voir avec une fissure structurelle traversante. Vous saurez dans quelle catégorie vous êtes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 — AMO ============ -->
+<section class="presta-bloc" id="amo">
+  <div class="contenu presta-bloc__grille">
+
+    <div class="presta-bloc__intro">
+      <span class="presta-bloc__icone">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+      </span>
+      <h2>Assistance à maîtrise d'ouvrage</h2>
+      <p>
+        Vous construisez, vous rénovez, vous agrandissez. Face à vous&nbsp;: des devis difficilement comparables, un vocabulaire technique, et des entreprises qui savent que vous ne savez pas. Je suis votre référent technique du début à la fin.
+      </p>
+
+      <dl class="meta">
+        <div><dt>Pour qui</dt><dd>Particulier menant un projet de construction ou de rénovation</dd></div>
+        <div><dt>Durée</dt><dd>Du montage du projet à la levée des réserves</dd></div>
+        <div><dt>Format</dt><dd>Mission ponctuelle ou accompagnement complet</dd></div>
+      </dl>
+    </div>
+
+    <div>
+      <div class="detail">
+        <h3>Ce que je prends en charge</h3>
+        <ul class="liste-controle">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Définition et cadrage du besoin</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Rédaction du descriptif de travaux</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Analyse comparative des devis</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Vérification des assurances des entreprises</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visites de chantier et comptes rendus</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Contrôle de l'avancement et des situations</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Arbitrage technique en cas de désaccord</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Assistance à la réception</li>
+        </ul>
+      </div>
+
+      <p class="cas">
+        <strong>Vous restez le décideur.</strong> Mon rôle n'est pas de choisir à votre place, mais de faire en sorte que vos décisions soient prises avec les bonnes informations&nbsp;— et que personne ne profite d'un déséquilibre technique.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 — URBANISME ============ -->
+<section class="presta-bloc" id="urbanisme">
+  <div class="contenu presta-bloc__grille">
+
+    <div class="presta-bloc__intro">
+      <span class="presta-bloc__icone">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+      </span>
+      <h2>Permis et déclarations préalables</h2>
+      <p>
+        Extension, garage, abri, surélévation, changement de destination, ravalement. Le dossier d'urbanisme est un exercice à part&nbsp;: mal monté, il revient avec une demande de pièces complémentaires et vous perdez des mois.
+      </p>
+
+      <dl class="meta">
+        <div><dt>Pour qui</dt><dd>Particulier avec un projet soumis à autorisation</dd></div>
+        <div><dt>Délai</dt><dd>Instruction&nbsp;: 1 mois en DP, 2 à 3 mois en PC</dd></div>
+        <div><dt>Suivi</dt><dd>Jusqu'à l'obtention de l'arrêté</dd></div>
+      </dl>
+    </div>
+
+    <div>
+      <div class="detail">
+        <h3>Ce que je fais pour vous</h3>
+        <ul class="liste-controle">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Étude de faisabilité au regard du PLU</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Vérification des servitudes et contraintes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Plans de masse, de coupe et de façades</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Notice descriptive et insertion paysagère</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Constitution et dépôt du dossier complet</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Suivi de l'instruction en mairie</li>
+        </ul>
+      </div>
+
+      <p class="cas">
+        <strong>Au-delà d'une certaine surface, l'architecte est obligatoire.</strong> Le seuil est fixé à 150&nbsp;m² de surface de plancher pour une construction neuve à usage d'habitation. Je vous le dirai dès le premier échange, et je peux travailler avec l'architecte de votre choix.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCLE COMMUN ============ -->
+<section class="bloc bloc--encre">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Quelle que soit la mission</p>
+      <h2>Ce qui ne change jamais</h2>
+    </div>
+
+    <div class="socle__grille">
+      <div class="socle__item">
+        <span class="socle__puce">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <h3>C'est moi qui viens</h3>
+        <p>Aucun sous-traitant, aucun expert délégué. La personne que vous avez au téléphone est celle qui montera dans les combles.</p>
+      </div>
+      <div class="socle__item">
+        <span class="socle__puce">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <h3>Aucune commission</h3>
+        <p>Je ne vends pas de travaux, je n'ai pas d'accord d'apporteur avec une agence ni avec un artisan. Mes honoraires sont ma seule rémunération.</p>
+      </div>
+      <div class="socle__item">
+        <span class="socle__puce">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="17" x2="14" y2="17"/></svg>
+        </span>
+        <h3>Un écrit, toujours</h3>
+        <p>Un avis oral ne vaut rien face à un vendeur, un constructeur ou un assureur. Chaque mission produit un document daté et photographié.</p>
+      </div>
+      <div class="socle__item">
+        <span class="socle__puce">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <h3>On en reparle après</h3>
+        <p>Le rapport remis, on le reprend au téléphone. Un document technique qu'on ne vous explique pas ne sert pas à grand-chose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TARIFS ============ -->
+<section class="bloc bloc--lavis">
+  <div class="contenu tarif">
+    <div>
+      <p class="surtitre">Honoraires</p>
+      <h2>Un devis ferme sous 24 heures</h2>
+      <p class="chapo">
+        Vous trouverez sur la <a href="tarifs.html" style="color:var(--bleu);font-weight:500;">page tarifs</a> des repères chiffrés par type de bien et par surface. Ce sont des ordres de grandeur&nbsp;: une longère de 1900 et un pavillon de 2015 ne demandent pas le même travail.
+      </p>
+      <p class="chapo">
+        Après notre échange téléphonique, vous recevez un devis chiffré et ferme. Pas d'estimation qui bouge en cours de route, pas de supplément découvert à la fin.
+      </p>
+    </div>
+
+    <div class="tarif__encart">
+      <div class="tarif__ligne"><span>Échange téléphonique préalable</span><span>Gratuit</span></div>
+      <div class="tarif__ligne"><span>Devis détaillé et ferme</span><span>Sous 24 h</span></div>
+      <div class="tarif__ligne"><span>Engagement à la demande de devis</span><span>Aucun</span></div>
+      <div class="tarif__ligne"><span>Rapport écrit après visite</span><span>Inclus</span></div>
+      <div class="tarif__ligne"><span>Débriefing téléphonique du rapport</span><span>Inclus</span></div>
+      <p class="tarif__note">
+        SKP Solutions relève du régime simplifié d'imposition. Les montants figurant dans mes rapports sont systématiquement présentés en HT et en TTC.
+      </p>
+      <a class="btn btn--plein" href="contact.html" style="margin-top:22px;width:100%;justify-content:center;">Demander mon devis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPEL FINAL ============ -->
+<section class="bloc bloc--encre final">
+  <div class="contenu">
+    <p class="surtitre">Vous hésitez encore</p>
+    <h2>Appelez-moi avant de vous décider.</h2>
+    <p class="chapo" style="margin-inline:auto">
+      Cinq minutes au téléphone suffisent le plus souvent à savoir si une expertise est justifiée dans votre cas. Et si elle ne l'est pas, je vous le dirai&nbsp;: c'est aussi ça, être indépendant.
+    </p>
+    <div class="final__actions">
+      <a class="btn btn--blanc" href="tel:+33789526914">Appeler le 07 89 52 69 14</a>
+      <a class="btn btn--fantome" href="contact.html">Écrire un message</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">SKP Solutions</div>
+        <p>Expertise bâtiment indépendante au service des particuliers. Loire-Atlantique, Vendée et départements limitrophes.</p>
+        <div class="reseaux">
+          <a href="https://www.linkedin.com/company/skpsolutions/" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/skp_solutions" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/18JYyt2Jcp/" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.3 0-4 1.8-4 4V12H7.5v3.5H10V22h3.5v-6.5H16L16.5 12H13.5V9.5c0-.3.2-.5.5-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul>
+          <li><a href="services.html#avant-achat">Expertise avant achat</a></li>
+          <li><a href="services.html#reception">Réception de travaux</a></li>
+          <li><a href="services.html#pathologies">Fissures &amp; humidité</a></li>
+          <li><a href="services.html#amo">Assistance maîtrise d'ouvrage</a></li>
+          <li><a href="services.html#urbanisme">Permis &amp; déclarations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Le cabinet</p>
+        <ul>
+          <li><a href="qui-suis-je.html">Qui suis-je&nbsp;?</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul>
+          <li><a href="tel:+33789526914">07 89 52 69 14</a></li>
+          <li><a href="mailto:contact@skp-solutions.fr">contact@skp-solutions.fr</a></li>
+          <li>ZA Beau Soleil<br>1 rue des Oliviers<br>44680 Sainte-Pazanne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__legal">
+      <p>SKP Solutions S.A.S.U. — capital 2 000 € — RCS Nantes 101 053 403</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre de contact fixe (mobile) -->
+<div class="barre-mobile">
+  <a class="barre-mobile__tel" href="tel:+33789526914">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="barre-mobile__devis" href="contact.html">Demander un devis</a>
+</div>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var ouvert = nav.getAttribute('data-ouvert') === 'true';
+      nav.setAttribute('data-ouvert', String(!ouvert));
+      burger.setAttribute('aria-expanded', String(!ouvert));
+      burger.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.setAttribute('data-ouvert', 'false');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

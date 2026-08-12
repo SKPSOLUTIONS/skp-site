@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fissures : comment savoir si vous devez vous inquiéter | SKP Solutions</title>
+<meta name="description" content="Faïençage, fissure fine, lézarde en escalier : les critères d'un expert bâtiment pour distinguer une fissure sans gravité d'un mouvement de structure en cours.">
+<link rel="canonical" href="https://www.skp-solutions.fr/article-fissures.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Styles propres à un article ===== */
+
+.tete-article { background: var(--bleu); color: var(--blanc); padding-block: 64px 56px; }
+.tete-article h1 { max-width: 20ch; margin-bottom: 18px; }
+.tete-article .chapo { color: rgba(255,255,255,0.75); max-width: 68ch; }
+.tete-article .surtitre { color: rgba(255,255,255,0.6); }
+.tete-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.16);
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+.tete-article__meta span { display: flex; align-items: center; gap: 8px; }
+
+.fil { font-size: 13.5px; margin-bottom: 22px; color: rgba(255,255,255,0.55); }
+.fil a { color: rgba(255,255,255,0.75); text-decoration: none; }
+.fil a:hover { color: var(--blanc); text-decoration: underline; }
+
+/* -- Corps de l'article -- */
+.article { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
+
+.texte { max-width: 70ch; }
+.texte > * + * { margin-top: 20px; }
+.texte h2 {
+  font-size: 28px;
+  margin-top: 48px;
+  padding-top: 8px;
+  scroll-margin-top: 110px;
+}
+.texte h3 { font-size: 20px; margin-top: 32px; }
+.texte p { font-size: 16.5px; line-height: 1.78; color: var(--texte); }
+.texte strong { font-weight: 700; }
+
+.texte ul { display: grid; gap: 12px; }
+.texte ul li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.texte ul li svg { flex: 0 0 auto; margin-top: 6px; }
+
+.encadre {
+  border-left: 3px solid var(--bleu);
+  background: var(--bleu-lavis);
+  padding: 22px 26px;
+  border-radius: 0 8px 8px 0;
+}
+.encadre p { font-size: 15.5px; color: var(--texte-doux); }
+.encadre strong { color: var(--texte); }
+
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--bleu-trait);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 15px;
+}
+.tableau th {
+  background: var(--bleu-lavis);
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bleu);
+  border-bottom: 1px solid var(--bleu-trait);
+}
+.tableau td { padding: 14px 18px; border-bottom: 1px solid var(--ligne); vertical-align: top; }
+.tableau tr:last-child td { border-bottom: none; }
+.tableau td:first-child { font-weight: 700; white-space: nowrap; }
+
+/* -- Colonne latérale -- */
+.cote { position: sticky; top: 110px; display: grid; gap: 22px; }
+.cote-carte {
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  padding: 26px 24px;
+  background: var(--blanc);
+}
+.cote-carte h2 { font-size: 19px; margin-bottom: 12px; }
+.cote-carte p { font-size: 14.5px; color: var(--texte-doux); margin-bottom: 18px; }
+.cote-carte .btn { width: 100%; justify-content: center; }
+
+.sommaire-cote ul { display: grid; gap: 10px; }
+.sommaire-cote a {
+  font-size: 14.5px;
+  color: var(--texte-doux);
+  text-decoration: none;
+  display: block;
+  padding-left: 14px;
+  border-left: 2px solid var(--ligne);
+  line-height: 1.45;
+}
+.sommaire-cote a:hover { color: var(--bleu); border-left-color: var(--bleu); }
+
+/* -- Fin d'article -- */
+.signature-article {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ligne);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.signature-article img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.signature-article strong { display: block; font-size: 16px; }
+.signature-article span { font-size: 14px; color: var(--texte-doux); }
+
+.final { text-align: center; }
+.final__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+
+/* -- Responsive -- */
+@media (max-width: 980px) {
+  .article { grid-template-columns: 1fr; gap: 44px; }
+  .cote { position: static; }
+  .texte h2 { font-size: 25px; margin-top: 40px; }
+}
+@media (max-width: 620px) {
+  .tableau { font-size: 14px; }
+  .tableau th, .tableau td { padding: 11px 13px; }
+  .final__actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<a class="saut-contenu" href="#principal">Aller au contenu</a>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="entete">
+  <div class="contenu entete__inner">
+    <a class="marque" href="index.html">
+      <img class="marque__logo" src="assets/logo-skp.png" alt="">
+      <span class="marque__nom">SKP Solutions</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="qui-suis-je.html">Qui suis-je&nbsp;?</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="references.html">Références</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="tel-entete" href="tel:+33789526914" aria-label="Appeler le 07 89 52 69 14">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn--plein" href="contact.html">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ EN-TÊTE D'ARTICLE ============ -->
+<article>
+<header class="tete-article">
+  <div class="contenu">
+    <p class="fil"><a href="blog.html">Blog</a> &nbsp;/&nbsp; Pathologies</p>
+    <p class="surtitre">Pathologies du bâti</p>
+    <h1>Fissures&nbsp;: comment savoir si vous devez vous inquiéter</h1>
+    <p class="chapo">
+      C'est la question qu'on me pose le plus souvent. Une fissure apparaît sur une façade, on la photographie, on cherche sur internet, et on tombe soit sur des articles rassurants, soit sur des entreprises qui proposent des micropieux à 40&nbsp;000 euros. Voici les critères que j'utilise réellement sur le terrain.
+    </p>
+    <div class="tete-article__meta">
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        8 minutes de lecture
+      </span>
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Stéphane Guillain
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CORPS ============ -->
+<div class="bloc">
+  <div class="contenu article">
+
+    <div class="texte">
+
+      <p>
+        Commençons par ce qui devrait vous rassurer&nbsp;: <strong>la grande majorité des fissures que je vois sur des maisons individuelles n'ont aucune conséquence structurelle.</strong> Un bâtiment vit, respire, travaille avec les saisons. Des microfissures apparaissent, se stabilisent, et n'évolueront plus jamais.
+      </p>
+
+      <p>
+        Le problème, c'est que rien dans l'apparence immédiate d'une fissure ne dit à un non-professionnel dans quelle catégorie elle se range. D'où cette grille de lecture.
+      </p>
+
+      <h2 id="largeur">Premier critère&nbsp;: la largeur</h2>
+
+      <p>
+        C'est le critère le plus simple à observer, et le plus mal utilisé. Une fissure se mesure au niveau de son ouverture la plus large, pas à son point le plus étroit.
+      </p>
+
+      <table class="tableau">
+        <thead>
+          <tr><th>Ouverture</th><th>Dénomination</th><th>Lecture courante</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt; 0,2 mm</td>
+            <td>Faïençage ou microfissure</td>
+            <td>Superficiel, affecte l'enduit ou la peinture. Sans gravité dans l'immense majorité des cas.</td>
+          </tr>
+          <tr>
+            <td>0,2 à 2 mm</td>
+            <td>Fissure fine</td>
+            <td>À surveiller. Souvent bénigne, mais la cause mérite d'être comprise si elle traverse l'enduit.</td>
+          </tr>
+          <tr>
+            <td>&gt; 2 mm</td>
+            <td>Fissure ou lézarde</td>
+            <td>Justifie un examen. Au-delà, on parle de désordre potentiellement structurel.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Attention à un piège fréquent&nbsp;: une fissure large mais parfaitement stable depuis vingt ans est souvent moins préoccupante qu'une fissure fine apparue il y a trois mois et qui continue de s'ouvrir. <strong>La largeur seule ne suffit jamais à conclure.</strong>
+      </p>
+
+      <h2 id="direction">Deuxième critère&nbsp;: la direction et la forme</h2>
+
+      <p>
+        C'est là que le regard change vraiment. Une fissure raconte le mouvement qui l'a produite.
+      </p>
+
+      <ul>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="20"/></svg>
+          <span><strong>Fissure verticale</strong> — souvent liée à un retrait de matériau ou à une jonction entre deux éléments de nature différente. Fréquemment bénigne, surtout si elle suit un joint de construction.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.4" stroke-linecap="round"><line x1="4" y1="12" x2="20" y2="12"/></svg>
+          <span><strong>Fissure horizontale</strong> — plus rarement anodine. Peut signaler une poussée latérale, un défaut de chaînage ou un problème au niveau d'un plancher.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 20 9 20 9 14 14 14 14 8 19 8 19 4"/></svg>
+          <span><strong>Fissure en escalier</strong> — elle suit les joints de maçonnerie en diagonale. C'est le signal le plus caractéristique d'un mouvement de fondation, surtout si elle part d'un angle d'ouverture.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5"/></svg>
+          <span><strong>Fissure oblique traversante</strong> — si elle est visible à l'identique à l'intérieur et à l'extérieur, au même endroit, elle traverse le mur. C'est un critère de gravité important.</span>
+        </li>
+      </ul>
+
+      <div class="encadre">
+        <p>
+          <strong>Le point qui compte le plus&nbsp;:</strong> une fissure qui part de l'angle d'une fenêtre ou d'une porte et remonte en diagonale n'est presque jamais anodine. Ces angles sont les points faibles du mur&nbsp;: c'est là que se lit en premier un mouvement différentiel du bâtiment.
+        </p>
+      </div>
+
+      <h2 id="evolution">Troisième critère&nbsp;: l'évolution dans le temps</h2>
+
+      <p>
+        C'est le critère décisif, et le seul que vous pouvez documenter vous-même sans aucun matériel particulier.
+      </p>
+
+      <p>
+        Une fissure stabilisée, même large, ne présente pas le même risque qu'une fissure active. Pour le savoir, il faut mesurer dans le temps. La méthode la plus simple&nbsp;:
+      </p>
+
+      <ul>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Photographiez la fissure avec un réglet ou une pièce de monnaie posée à côté, pour l'échelle.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Tracez au crayon deux repères de part et d'autre, et notez la date au mur.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Reprenez la photo tous les deux à trois mois, sur au moins un cycle complet de saisons.</span>
+        </li>
+      </ul>
+
+      <p>
+        Pourquoi une année entière&nbsp;? Parce qu'une part des mouvements est saisonnière. En Loire-Atlantique et en Vendée, les sols argileux se rétractent en période sèche et gonflent quand les pluies reviennent. Une fissure qui s'ouvre en septembre et se referme en février raconte un phénomène de retrait-gonflement des argiles&nbsp;— un mécanisme différent d'un tassement continu.
+      </p>
+
+      <h2 id="contexte">Quatrième critère&nbsp;: le contexte</h2>
+
+      <p>
+        C'est la partie que les articles généralistes oublient presque toujours, et c'est pourtant souvent là que se trouve l'explication. Quand j'arrive sur place, je regarde autant autour de la maison que la fissure elle-même.
+      </p>
+
+      <h3>Ce qui s'est passé récemment</h3>
+      <p>
+        Un été particulièrement sec, des travaux de terrassement chez le voisin, la construction d'une extension, une fuite sur un réseau enterré, l'abattage ou au contraire la plantation d'un arbre à proximité. Un peuplier planté à huit mètres d'une maison sur sol argileux peut suffire à provoquer un tassement.
+      </p>
+
+      <h3>La nature du sol</h3>
+      <p>
+        Une bonne partie du département est concernée par l'aléa retrait-gonflement des argiles. Cette information est publique et consultable gratuitement sur le site Géorisques, à partir de votre adresse. C'est la première chose que je vérifie avant même de me déplacer.
+      </p>
+
+      <h3>L'âge et le mode constructif</h3>
+      <p>
+        Une longère en moellons de 1900 et un pavillon en parpaings de 1978 ne fissurent pas pour les mêmes raisons et ne se réparent pas de la même façon. Sur du bâti ancien, appliquer un traitement pensé pour du bâti récent aggrave régulièrement la situation&nbsp;— notamment quand on bloque des échanges d'humidité qui existaient depuis toujours.
+      </p>
+
+      <div class="encadre">
+        <p>
+          <strong>Un réflexe qui coûte cher&nbsp;:</strong> reboucher une fissure avant d'en connaître la cause. Non seulement ça ne règle rien si le mouvement continue, mais ça vous prive de la possibilité d'observer son évolution — et donc de démontrer quoi que ce soit ensuite, que ce soit face à un vendeur ou à un assureur.
+        </p>
+      </div>
+
+      <h2 id="quand-appeler">Quand faut-il appeler quelqu'un&nbsp;?</h2>
+
+      <p>
+        Je vous donne les critères qui, chez moi, déclenchent une visite plutôt qu'un simple conseil au téléphone&nbsp;:
+      </p>
+
+      <ul>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>La fissure est visible des deux côtés du mur, au même endroit.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Elle dépasse 2 mm, ou elle s'est élargie de façon perceptible en moins d'un an.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Elle dessine un escalier dans les joints, ou part d'un angle d'ouverture.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Elle s'accompagne d'autres signes&nbsp;: portes qui coincent, carrelage qui se fend, plancher qui prend de la pente.</span>
+        </li>
+        <li>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Vous êtes sur le point d'acheter le bien&nbsp;— dans ce cas, n'attendez pas de cocher les autres critères.</span>
+        </li>
+      </ul>
+
+      <p>
+        Dans les autres situations, une photo et cinq minutes au téléphone suffisent souvent à savoir s'il faut se déplacer. Je ne facture pas cet échange, et il m'arrive régulièrement de conclure qu'il n'y a rien à faire.
+      </p>
+
+      <h2 id="assurance">Et la garantie sécheresse&nbsp;?</h2>
+
+      <p>
+        Si votre commune fait l'objet d'un arrêté de catastrophe naturelle au titre de la sécheresse, vos fissures peuvent relever de la garantie catastrophes naturelles de votre assurance habitation. Les délais de déclaration sont courts après publication de l'arrêté au Journal officiel, ce qui rend le suivi de l'actualité communale déterminant.
+      </p>
+
+      <p>
+        C'est typiquement une situation où un rapport technique indépendant, établi avant l'expertise de l'assureur, change le déroulement du dossier. L'expert mandaté par la compagnie défend les intérêts de la compagnie&nbsp;: ce n'est pas un reproche, c'est sa mission. Avoir un document contradictoire de votre côté rétablit l'équilibre.
+      </p>
+
+      <div class="signature-article">
+        <img src="assets/stephane-guillain.jpg" alt="">
+        <div>
+          <strong>Stéphane Guillain</strong>
+          <span>Expert bâtiment indépendant — 18 ans de conduite de travaux</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Colonne latérale -->
+    <aside class="cote">
+      <div class="cote-carte sommaire-cote">
+        <h2>Dans cet article</h2>
+        <ul>
+          <li><a href="#largeur">La largeur de la fissure</a></li>
+          <li><a href="#direction">La direction et la forme</a></li>
+          <li><a href="#evolution">L'évolution dans le temps</a></li>
+          <li><a href="#contexte">Le contexte du bâtiment</a></li>
+          <li><a href="#quand-appeler">Quand faut-il appeler&nbsp;?</a></li>
+          <li><a href="#assurance">La garantie sécheresse</a></li>
+        </ul>
+      </div>
+
+      <div class="cote-carte">
+        <h2>Un doute sur vos fissures&nbsp;?</h2>
+        <p>
+          Envoyez-moi une photo et décrivez-moi la situation. Je vous dis franchement si un déplacement se justifie.
+        </p>
+        <a class="btn btn--plein" href="contact.html">Me contacter</a>
+      </div>
+    </aside>
+
+  </div>
+</div>
+</article>
+
+<!-- ============ APPEL FINAL ============ -->
+<section class="bloc bloc--encre final">
+  <div class="contenu">
+    <p class="surtitre">Votre cas est unique</p>
+    <h2>Aucun article ne remplace<br>un regard sur place.</h2>
+    <p class="chapo" style="margin-inline:auto">
+      Ces repères valent pour l'ensemble des situations courantes. Pour votre maison précisément, un échange de quelques minutes vaut mieux que des heures de recherche.
+    </p>
+    <div class="final__actions">
+      <a class="btn btn--blanc" href="tel:+33789526914">Appeler le 07 89 52 69 14</a>
+      <a class="btn btn--fantome" href="blog.html">Revenir au blog</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">SKP Solutions</div>
+        <p>Expertise bâtiment indépendante au service des particuliers. Loire-Atlantique, Vendée et départements limitrophes.</p>
+        <div class="reseaux">
+          <a href="https://www.linkedin.com/company/skpsolutions/" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/skp_solutions" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/18JYyt2Jcp/" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.3 0-4 1.8-4 4V12H7.5v3.5H10V22h3.5v-6.5H16L16.5 12H13.5V9.5c0-.3.2-.5.5-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul>
+          <li><a href="services.html#avant-achat">Expertise avant achat</a></li>
+          <li><a href="services.html#reception">Réception de travaux</a></li>
+          <li><a href="services.html#pathologies">Fissures &amp; humidité</a></li>
+          <li><a href="services.html#amo">Assistance maîtrise d'ouvrage</a></li>
+          <li><a href="services.html#urbanisme">Permis &amp; déclarations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Le cabinet</p>
+        <ul>
+          <li><a href="qui-suis-je.html">Qui suis-je&nbsp;?</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul>
+          <li><a href="tel:+33789526914">07 89 52 69 14</a></li>
+          <li><a href="mailto:contact@skp-solutions.fr">contact@skp-solutions.fr</a></li>
+          <li>ZA Beau Soleil<br>1 rue des Oliviers<br>44680 Sainte-Pazanne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__legal">
+      <p>SKP Solutions S.A.S.U. — capital 2 000 € — RCS Nantes 101 053 403</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre de contact fixe (mobile) -->
+<div class="barre-mobile">
+  <a class="barre-mobile__tel" href="tel:+33789526914">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="barre-mobile__devis" href="contact.html">Demander un devis</a>
+</div>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var ouvert = nav.getAttribute('data-ouvert') === 'true';
+      nav.setAttribute('data-ouvert', String(!ouvert));
+      burger.setAttribute('aria-expanded', String(!ouvert));
+      burger.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.setAttribute('data-ouvert', 'false');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

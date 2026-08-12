@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acheter une maison ancienne : les 7 points à vérifier | SKP Solutions</title>
+<meta name="description" content="Structure, charpente, humidité, assainissement, urbanisme : la méthode d'un expert bâtiment pour évaluer une maison ancienne avant de faire une offre.">
+<link rel="canonical" href="https://www.skp-solutions.fr/article-maison-ancienne.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Styles propres à un article ===== */
+
+.tete-article { background: var(--bleu); color: var(--blanc); padding-block: 64px 56px; }
+.tete-article h1 { max-width: 20ch; margin-bottom: 18px; }
+.tete-article .chapo { color: rgba(255,255,255,0.75); max-width: 68ch; }
+.tete-article .surtitre { color: rgba(255,255,255,0.6); }
+.tete-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.16);
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+.tete-article__meta span { display: flex; align-items: center; gap: 8px; }
+
+.fil { font-size: 13.5px; margin-bottom: 22px; color: rgba(255,255,255,0.55); }
+.fil a { color: rgba(255,255,255,0.75); text-decoration: none; }
+.fil a:hover { color: var(--blanc); text-decoration: underline; }
+
+/* -- Corps de l'article -- */
+.article { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
+
+.texte { max-width: 70ch; }
+.texte > * + * { margin-top: 20px; }
+.texte h2 {
+  font-size: 28px;
+  margin-top: 48px;
+  padding-top: 8px;
+  scroll-margin-top: 110px;
+}
+.texte h3 { font-size: 20px; margin-top: 32px; }
+.texte p { font-size: 16.5px; line-height: 1.78; color: var(--texte); }
+.texte strong { font-weight: 700; }
+
+.texte ul { display: grid; gap: 12px; }
+.texte ul li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.texte ul li svg { flex: 0 0 auto; margin-top: 6px; }
+
+.encadre {
+  border-left: 3px solid var(--bleu);
+  background: var(--bleu-lavis);
+  padding: 22px 26px;
+  border-radius: 0 8px 8px 0;
+}
+.encadre p { font-size: 15.5px; color: var(--texte-doux); }
+.encadre strong { color: var(--texte); }
+
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--bleu-trait);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 15px;
+}
+.tableau th {
+  background: var(--bleu-lavis);
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bleu);
+  border-bottom: 1px solid var(--bleu-trait);
+}
+.tableau td { padding: 14px 18px; border-bottom: 1px solid var(--ligne); vertical-align: top; }
+.tableau tr:last-child td { border-bottom: none; }
+.tableau td:first-child { font-weight: 700; white-space: nowrap; }
+
+/* -- Colonne latérale -- */
+.cote { position: sticky; top: 110px; display: grid; gap: 22px; }
+.cote-carte {
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  padding: 26px 24px;
+  background: var(--blanc);
+}
+.cote-carte h2 { font-size: 19px; margin-bottom: 12px; }
+.cote-carte p { font-size: 14.5px; color: var(--texte-doux); margin-bottom: 18px; }
+.cote-carte .btn { width: 100%; justify-content: center; }
+
+.sommaire-cote ul { display: grid; gap: 10px; }
+.sommaire-cote a {
+  font-size: 14.5px;
+  color: var(--texte-doux);
+  text-decoration: none;
+  display: block;
+  padding-left: 14px;
+  border-left: 2px solid var(--ligne);
+  line-height: 1.45;
+}
+.sommaire-cote a:hover { color: var(--bleu); border-left-color: var(--bleu); }
+
+/* -- Fin d'article -- */
+.signature-article {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ligne);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.signature-article img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.signature-article strong { display: block; font-size: 16px; }
+.signature-article span { font-size: 14px; color: var(--texte-doux); }
+
+.final { text-align: center; }
+.final__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+
+/* -- Responsive -- */
+@media (max-width: 980px) {
+  .article { grid-template-columns: 1fr; gap: 44px; }
+  .cote { position: static; }
+  .texte h2 { font-size: 25px; margin-top: 40px; }
+}
+@media (max-width: 620px) {
+  .tableau { font-size: 14px; }
+  .tableau th, .tableau td { padding: 11px 13px; }
+  .final__actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<a class="saut-contenu" href="#principal">Aller au contenu</a>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="entete">
+  <div class="contenu entete__inner">
+    <a class="marque" href="index.html">
+      <img class="marque__logo" src="assets/logo-skp.png" alt="">
+      <span class="marque__nom">SKP Solutions</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="qui-suis-je.html">Qui suis-je&nbsp;?</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="references.html">Références</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="tel-entete" href="tel:+33789526914" aria-label="Appeler le 07 89 52 69 14">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn--plein" href="contact.html">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ EN-TÊTE D'ARTICLE ============ -->
+<article>
+<header class="tete-article">
+  <div class="contenu">
+    <p class="fil"><a href="blog.html">Blog</a> &nbsp;/&nbsp; Achat immobilier</p>
+    <p class="surtitre">Achat immobilier</p>
+    <h1>Acheter une maison ancienne&nbsp;: les sept points à vérifier</h1>
+    <p class="chapo">Une maison ancienne a du charme et une histoire — y compris des travaux passés dont personne ne vous parlera spontanément. Voici l'ordre dans lequel je regarde les choses, et les questions que je pose au vendeur.</p>
+    <div class="tete-article__meta">
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        9 minutes de lecture
+      </span>
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Stéphane Guillain
+      </span>
+    </div>
+  </div>
+</header>
+
+<div class="bloc">
+  <div class="contenu article">
+    <div class="texte">
+
+      <p>
+        Une maison ancienne se juge autrement qu'un pavillon récent. Elle a déjà prouvé qu'elle tenait debout, ce qui est un bon signe, mais elle a aussi accumulé des interventions successives — souvent mal documentées, parfois franchement contre-productives. Voici l'ordre dans lequel je regarde les choses quand j'accompagne un acquéreur.
+      </p>
+
+      <h2 id="structure">1. La structure, avant tout le reste</h2>
+      <p>
+        C'est le seul poste qui peut faire renoncer à un achat. Le reste se répare&nbsp;; un problème structurel se répare aussi, mais le budget change d'ordre de grandeur.
+      </p>
+      <p>
+        Je regarde les murs porteurs, les appuis de plancher, les linteaux au-dessus des ouvertures, et surtout la cohérence de l'ensemble. Une maison ancienne qui a subi une ouverture de mur porteur sans reprise de charge correcte, ou une suppression de refend, présente des signes que l'on retrouve à distance&nbsp;: portes qui ne ferment plus, plancher en pente, fissures aux angles.
+      </p>
+      <div class="encadre">
+        <p>
+          <strong>La question à poser au vendeur&nbsp;:</strong> «&nbsp;Des murs ont-ils été ouverts ou supprimés&nbsp;?&nbsp;» Puis&nbsp;: «&nbsp;Avez-vous les documents&nbsp;?&nbsp;» L'absence de réponse écrite est en soi une information.
+        </p>
+      </div>
+
+      <h2 id="charpente">2. La charpente et la couverture</h2>
+      <p>
+        Il faut monter dans les combles. Une visite d'agence n'y passe presque jamais, et c'est pourtant là que se lisent les problèmes les plus coûteux.
+      </p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Bois attaqué&nbsp;: vermoulure, galeries, sciure fraîche au sol. La sciure fraîche signale une activité en cours, pas une attaque ancienne.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Déformation&nbsp;: pannes fléchies, arbalétriers déversés, assemblages ouverts.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Traces d'infiltration&nbsp;: auréoles sur les bois, sur l'isolant, sur le plafond de l'étage.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Jour visible en toiture, tuiles déplacées, liteaux cassés.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Isolant tassé, mouillé, ou posé directement contre la couverture sans lame d'air.</span></li>
+      </ul>
+      <p>
+        Sur la couverture vue de l'extérieur, la mousse n'est pas grave en soi. Ce qui compte, c'est l'alignement des rangs, l'état des rives et des faîtages, les solins de cheminée et l'état des gouttières.
+      </p>
+
+      <h2 id="humidite">3. L'humidité, la question centrale du bâti ancien</h2>
+      <p>
+        Une maison ancienne en pierre ou en terre a été conçue pour respirer. Elle gère l'humidité en la laissant s'évaporer par ses murs. Le drame classique consiste à lui appliquer les recettes du bâti récent&nbsp;: enduit ciment étanche, doublage plaqué contre le mur, sol béton, menuiseries parfaitement étanches sans ventilation.
+      </p>
+      <p>
+        Résultat&nbsp;: l'humidité qui sortait auparavant reste piégée, remonte plus haut, et fait éclater les enduits. J'ai vu des maisons dont l'état s'est dégradé après des travaux de rénovation coûteux.
+      </p>
+      <p>Ce que je cherche&nbsp;:</p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Une auréole horizontale régulière en bas de mur, souvent accompagnée de salpêtre&nbsp;: remontée capillaire.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Un enduit ciment sur des murs anciens, ou un carrelage collé en plein sur une terre battue recouverte.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Un terrain en pente vers la maison, des regards bouchés, un mur enterré côté nord.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>L'absence totale de ventilation&nbsp;: pas de VMC, grilles obturées, cave condamnée.</span></li>
+      </ul>
+
+      <h2 id="reseaux">4. Les réseaux</h2>
+      <p>
+        Sur une maison ancienne, l'électricité et la plomberie ont souvent été refaites par morceaux, sur plusieurs décennies. Le diagnostic électrique obligatoire vous donnera les anomalies&nbsp;; il ne vous dira pas si l'installation est cohérente ni ce que coûterait une reprise d'ensemble.
+      </p>
+      <p>
+        Regardez le tableau&nbsp;: sa taille, l'organisation des circuits, la présence de différentiels. Vérifiez l'alimentation générale et sa section. Côté plomberie, cherchez le plomb sur les canalisations anciennes, l'état des évacuations, et la production d'eau chaude.
+      </p>
+
+      <h2 id="assainissement">5. L'assainissement</h2>
+      <p>
+        C'est un poste régulièrement sous-estimé, particulièrement en secteur rural du pays de Retz et du vignoble. Si la maison n'est pas raccordée au tout-à-l'égout, elle dispose d'un assainissement individuel dont le contrôle par le SPANC est obligatoire à la vente.
+      </p>
+      <p>
+        Demandez le rapport de contrôle. S'il conclut à une non-conformité, la mise aux normes doit être réalisée dans un délai d'un an après l'acquisition, et le budget se compte en milliers d'euros. C'est un excellent levier de négociation, à condition de le connaître avant de signer.
+      </p>
+
+      <h2 id="documents">6. Les documents, avant même la visite</h2>
+      <p>
+        Une part importante du travail se fait sur papier. Les diagnostics obligatoires bien sûr, mais aussi&nbsp;:
+      </p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Les factures et devis des travaux réalisés, qui racontent l'histoire du bâtiment.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Les autorisations d'urbanisme des extensions, vérandas et garages&nbsp;: une construction non déclarée devient votre problème.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Le plan cadastral et le zonage du PLU, notamment si vous envisagez d'agrandir.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>L'état des risques, qui indique l'exposition au retrait-gonflement des argiles.</span></li>
+      </ul>
+      <div class="encadre">
+        <p>
+          <strong>Le cas le plus fréquent&nbsp;:</strong> une véranda ou un garage construit sans déclaration préalable. Passé dix ans, l'action en démolition est prescrite, mais la construction reste irrégulière au regard de l'urbanisme, ce qui peut compliquer une revente ou une extension future.
+        </p>
+      </div>
+
+      <h2 id="budget">7. Le budget réel, pas le prix affiché</h2>
+      <p>
+        Le vrai calcul n'est pas le prix du bien, mais le prix du bien plus les travaux nécessaires dans les cinq ans. Une maison à 190&nbsp;000 € avec 60&nbsp;000 € de toiture et d'assainissement à reprendre coûte plus cher qu'une maison à 240&nbsp;000 € en état.
+      </p>
+      <p>
+        C'est précisément ce que produit une expertise avant achat&nbsp;: une hiérarchisation par urgence — ce qui doit être fait immédiatement, dans les cinq ans, ou ce qui peut attendre — avec des montants chiffrés. Ce document sert autant à décider qu'à négocier.
+      </p>
+
+      <div class="signature-article">
+        <img src="assets/stephane-guillain.jpg" alt="">
+        <div>
+          <strong>Stéphane Guillain</strong>
+          <span>Expert bâtiment indépendant — 18 ans de conduite de travaux</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="cote">
+      <div class="cote-carte sommaire-cote">
+        <h2>Dans cet article</h2>
+        <ul>
+          <li><a href="#structure">La structure</a></li>
+          <li><a href="#charpente">Charpente et couverture</a></li>
+          <li><a href="#humidite">L'humidité</a></li>
+          <li><a href="#reseaux">Les réseaux</a></li>
+          <li><a href="#assainissement">L'assainissement</a></li>
+          <li><a href="#documents">Les documents</a></li>
+          <li><a href="#budget">Le budget réel</a></li>
+        </ul>
+      </div>
+      <div class="cote-carte">
+        <h2>Une visite prévue prochainement&nbsp;?</h2>
+        <p>Je peux vous accompagner sur place, avant le compromis. Décrivez-moi le bien et votre calendrier.</p>
+        <a class="btn btn--plein" href="contact.html">Me contacter</a>
+      </div>
+    </aside>
+  </div>
+</div>
+</article>
+
+<section class="bloc bloc--encre final">
+  <div class="contenu">
+    <p class="surtitre">Votre cas est unique</p>
+    <h2>Aucun article ne remplace<br>un regard sur place.</h2>
+    <p class="chapo" style="margin-inline:auto">
+      Ces repères valent pour les situations courantes. Pour votre bien précisément, un échange de quelques minutes vaut mieux que des heures de recherche.
+    </p>
+    <div class="final__actions">
+      <a class="btn btn--blanc" href="tel:+33789526914">Appeler le 07 89 52 69 14</a>
+      <a class="btn btn--fantome" href="blog.html">Revenir au blog</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">SKP Solutions</div>
+        <p>Expertise bâtiment indépendante au service des particuliers. Loire-Atlantique, Vendée et départements limitrophes.</p>
+        <div class="reseaux">
+          <a href="https://www.linkedin.com/company/skpsolutions/" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/skp_solutions" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/18JYyt2Jcp/" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.3 0-4 1.8-4 4V12H7.5v3.5H10V22h3.5v-6.5H16L16.5 12H13.5V9.5c0-.3.2-.5.5-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul>
+          <li><a href="services.html#avant-achat">Expertise avant achat</a></li>
+          <li><a href="services.html#reception">Réception de travaux</a></li>
+          <li><a href="services.html#pathologies">Fissures &amp; humidité</a></li>
+          <li><a href="services.html#amo">Assistance maîtrise d'ouvrage</a></li>
+          <li><a href="services.html#urbanisme">Permis &amp; déclarations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Le cabinet</p>
+        <ul>
+          <li><a href="qui-suis-je.html">Qui suis-je&nbsp;?</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul>
+          <li><a href="tel:+33789526914">07 89 52 69 14</a></li>
+          <li><a href="mailto:contact@skp-solutions.fr">contact@skp-solutions.fr</a></li>
+          <li>ZA Beau Soleil<br>1 rue des Oliviers<br>44680 Sainte-Pazanne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__legal">
+      <p>SKP Solutions S.A.S.U. — capital 2 000 € — RCS Nantes 101 053 403</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre de contact fixe (mobile) -->
+<div class="barre-mobile">
+  <a class="barre-mobile__tel" href="tel:+33789526914">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="barre-mobile__devis" href="contact.html">Demander un devis</a>
+</div>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var ouvert = nav.getAttribute('data-ouvert') === 'true';
+      nav.setAttribute('data-ouvert', String(!ouvert));
+      burger.setAttribute('aria-expanded', String(!ouvert));
+      burger.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.setAttribute('data-ouvert', 'false');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

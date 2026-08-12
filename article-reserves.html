@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réception de travaux : bien formuler ses réserves | SKP Solutions</title>
+<meta name="description" content="Localisation, description factuelle, référentiel DTU : comment rédiger des réserves opposables le jour de la réception, avec des exemples avant-après.">
+<link rel="canonical" href="https://www.skp-solutions.fr/article-reserves.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Styles propres à un article ===== */
+
+.tete-article { background: var(--bleu); color: var(--blanc); padding-block: 64px 56px; }
+.tete-article h1 { max-width: 20ch; margin-bottom: 18px; }
+.tete-article .chapo { color: rgba(255,255,255,0.75); max-width: 68ch; }
+.tete-article .surtitre { color: rgba(255,255,255,0.6); }
+.tete-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.16);
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+.tete-article__meta span { display: flex; align-items: center; gap: 8px; }
+
+.fil { font-size: 13.5px; margin-bottom: 22px; color: rgba(255,255,255,0.55); }
+.fil a { color: rgba(255,255,255,0.75); text-decoration: none; }
+.fil a:hover { color: var(--blanc); text-decoration: underline; }
+
+/* -- Corps de l'article -- */
+.article { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
+
+.texte { max-width: 70ch; }
+.texte > * + * { margin-top: 20px; }
+.texte h2 {
+  font-size: 28px;
+  margin-top: 48px;
+  padding-top: 8px;
+  scroll-margin-top: 110px;
+}
+.texte h3 { font-size: 20px; margin-top: 32px; }
+.texte p { font-size: 16.5px; line-height: 1.78; color: var(--texte); }
+.texte strong { font-weight: 700; }
+
+.texte ul { display: grid; gap: 12px; }
+.texte ul li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.texte ul li svg { flex: 0 0 auto; margin-top: 6px; }
+
+.encadre {
+  border-left: 3px solid var(--bleu);
+  background: var(--bleu-lavis);
+  padding: 22px 26px;
+  border-radius: 0 8px 8px 0;
+}
+.encadre p { font-size: 15.5px; color: var(--texte-doux); }
+.encadre strong { color: var(--texte); }
+
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--bleu-trait);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 15px;
+}
+.tableau th {
+  background: var(--bleu-lavis);
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bleu);
+  border-bottom: 1px solid var(--bleu-trait);
+}
+.tableau td { padding: 14px 18px; border-bottom: 1px solid var(--ligne); vertical-align: top; }
+.tableau tr:last-child td { border-bottom: none; }
+.tableau td:first-child { font-weight: 700; white-space: nowrap; }
+
+/* -- Colonne latérale -- */
+.cote { position: sticky; top: 110px; display: grid; gap: 22px; }
+.cote-carte {
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  padding: 26px 24px;
+  background: var(--blanc);
+}
+.cote-carte h2 { font-size: 19px; margin-bottom: 12px; }
+.cote-carte p { font-size: 14.5px; color: var(--texte-doux); margin-bottom: 18px; }
+.cote-carte .btn { width: 100%; justify-content: center; }
+
+.sommaire-cote ul { display: grid; gap: 10px; }
+.sommaire-cote a {
+  font-size: 14.5px;
+  color: var(--texte-doux);
+  text-decoration: none;
+  display: block;
+  padding-left: 14px;
+  border-left: 2px solid var(--ligne);
+  line-height: 1.45;
+}
+.sommaire-cote a:hover { color: var(--bleu); border-left-color: var(--bleu); }
+
+/* -- Fin d'article -- */
+.signature-article {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ligne);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.signature-article img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.signature-article strong { display: block; font-size: 16px; }
+.signature-article span { font-size: 14px; color: var(--texte-doux); }
+
+.final { text-align: center; }
+.final__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+
+/* -- Responsive -- */
+@media (max-width: 980px) {
+  .article { grid-template-columns: 1fr; gap: 44px; }
+  .cote { position: static; }
+  .texte h2 { font-size: 25px; margin-top: 40px; }
+}
+@media (max-width: 620px) {
+  .tableau { font-size: 14px; }
+  .tableau th, .tableau td { padding: 11px 13px; }
+  .final__actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<a class="saut-contenu" href="#principal">Aller au contenu</a>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="entete">
+  <div class="contenu entete__inner">
+    <a class="marque" href="index.html">
+      <img class="marque__logo" src="assets/logo-skp.png" alt="">
+      <span class="marque__nom">SKP Solutions</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="qui-suis-je.html">Qui suis-je&nbsp;?</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="references.html">Références</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="tel-entete" href="tel:+33789526914" aria-label="Appeler le 07 89 52 69 14">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn--plein" href="contact.html">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ EN-TÊTE D'ARTICLE ============ -->
+<article>
+<header class="tete-article">
+  <div class="contenu">
+    <p class="fil"><a href="blog.html">Blog</a> &nbsp;/&nbsp; Réception de travaux</p>
+    <p class="surtitre">Réception de travaux</p>
+    <h1>Réception de travaux&nbsp;: bien formuler ses réserves</h1>
+    <p class="chapo">Une réserve mal écrite est une réserve perdue. Ce qui compte n'est pas seulement de repérer le défaut, mais de le formuler de façon à ce qu'un tiers puisse l'exiger à votre place.</p>
+    <div class="tete-article__meta">
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        8 minutes de lecture
+      </span>
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Stéphane Guillain
+      </span>
+    </div>
+  </div>
+</header>
+
+<div class="bloc">
+  <div class="contenu article">
+    <div class="texte">
+
+      <p>
+        La réception est l'acte le plus important de votre chantier. C'est elle qui transfère la propriété de l'ouvrage, déclenche les garanties légales et fige ce que vous pouvez encore exiger. Et tout se joue sur un document&nbsp;: le procès-verbal, et la liste de réserves qui y est annexée.
+      </p>
+      <p>
+        J'ai vu des réserves parfaitement justifiées devenir inexploitables parce qu'elles étaient mal écrites. C'est un gâchis évitable.
+      </p>
+
+      <h2 id="pourquoi">Pourquoi la rédaction compte autant que le défaut</h2>
+      <p>
+        Une réserve est une exigence contractuelle. Elle doit permettre à un tiers — un juriste, un assureur, un juge, une entreprise qui n'était pas là ce jour-là — de comprendre <strong>quoi</strong>, <strong>où</strong> et <strong>en quoi c'est non conforme</strong>, sans avoir besoin de vous appeler.
+      </p>
+      <p>
+        Si la réserve est vague, l'entreprise décidera elle-même de ce qu'elle recouvre, et elle le fera dans son intérêt. Vous vous retrouverez à discuter du périmètre au lieu de discuter de la reprise.
+      </p>
+
+      <h2 id="trois-elements">Les trois éléments d'une réserve exploitable</h2>
+
+      <h3>La localisation précise</h3>
+      <p>
+        «&nbsp;Chambre 2, mur nord, à 1,20 m du sol et 40 cm de l'angle de la fenêtre&nbsp;» plutôt que «&nbsp;dans la chambre&nbsp;». Reprenez la dénomination des pièces telle qu'elle figure sur les plans contractuels, pas votre usage personnel.
+      </p>
+
+      <h3>La description factuelle</h3>
+      <p>
+        Décrivez ce que vous constatez, pas ce que vous en concluez. «&nbsp;Faïence décollée sur 3 carreaux&nbsp;» est un constat. «&nbsp;Carrelage mal posé&nbsp;» est un jugement, et un jugement se conteste.
+      </p>
+      <p>
+        Chiffrez systématiquement&nbsp;: dimensions, nombre, écart mesuré. «&nbsp;Jeu de 8 mm entre la porte et le sol&nbsp;» pèse plus que «&nbsp;porte mal ajustée&nbsp;».
+      </p>
+
+      <h3>Le référentiel</h3>
+      <p>
+        C'est ce qui distingue une réserve professionnelle d'une réclamation. Un défaut n'est opposable que s'il s'écarte de quelque chose&nbsp;: une pièce contractuelle ou une règle technique.
+      </p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Le contrat, la notice descriptive, les plans annexés, les avenants et les travaux modifiés acquéreur.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Les NF DTU applicables, qui fixent les tolérances admises pour chaque ouvrage.</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Les règles de l'art pour ce qui n'est pas normé.</span></li>
+      </ul>
+      <div class="encadre">
+        <p>
+          <strong>Point capital&nbsp;:</strong> les DTU admettent des tolérances. Un écart inférieur à la tolérance n'est pas un défaut, même s'il vous dérange visuellement. Inscrire une réserve sur un point conforme affaiblit l'ensemble de votre liste&nbsp;: l'entreprise s'en servira pour décrédibiliser les autres.
+        </p>
+      </div>
+
+      <h2 id="exemples">Trois exemples avant et après</h2>
+      <table class="tableau">
+        <thead><tr><th>Formulation faible</th><th>Formulation exploitable</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Peinture à refaire dans le salon</td>
+            <td>Salon, mur est&nbsp;: traces de reprise et différences de teinte visibles en lumière rasante sur environ 2 m², au droit de l'angle sud. Finition non conforme au degré de soin prévu au marché.</td>
+          </tr>
+          <tr>
+            <td>Fenêtre qui ferme mal</td>
+            <td>Chambre 1, fenêtre façade ouest&nbsp;: l'ouvrant frotte sur le dormant en partie basse et ne verrouille pas en position haute. Défaut de réglage de la quincaillerie.</td>
+          </tr>
+          <tr>
+            <td>Carrelage pas droit</td>
+            <td>Cuisine&nbsp;: désaffleurement de 3 mm entre carreaux mesuré au droit du seuil, sur 4 joints consécutifs, supérieur à la tolérance admise par le NF DTU applicable.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="photos">Photographier correctement</h2>
+      <p>
+        Une photo sans repère ne prouve rien. Trois réflexes&nbsp;: un plan large qui situe la pièce, un plan rapproché sur le défaut, et une échelle dans le cadre — un mètre ruban, une règle, à défaut une carte bancaire. Numérotez les photos et reprenez ce numéro dans la réserve correspondante.
+      </p>
+
+      <h2 id="jour-j">Le jour de la réception</h2>
+      <p>
+        Prévoyez du temps. Une réception bâclée en trente minutes est une réception perdue&nbsp;: comptez deux à trois heures pour un logement.
+      </p>
+      <p>
+        Exigez que la liste de réserves soit annexée au procès-verbal et que l'annexe soit signée par les deux parties. Repartez avec un exemplaire signé. Ne partez jamais avec la promesse qu'on vous l'enverra.
+      </p>
+      <div class="encadre">
+        <p>
+          <strong>Sur ce que vous n'avez pas pu voir&nbsp;:</strong> si la lumière était insuffisante, si l'eau ou l'électricité n'étaient pas raccordées, si une pièce était encombrée, faites-le inscrire au procès-verbal. C'est ce qui vous permettra d'y revenir.
+        </p>
+      </div>
+
+      <h2 id="apres">Après la réception</h2>
+      <p>
+        Les réserves inscrites relèvent de la garantie de parfait achèvement, due pendant un an à compter de la réception. L'entreprise doit les lever dans le délai convenu&nbsp;; à défaut, une mise en demeure par lettre recommandée est la première étape.
+      </p>
+      <p>
+        En VEFA, un régime spécifique s'ajoute&nbsp;: les vices apparents doivent être dénoncés dans le mois suivant la prise de possession, et le solde du prix peut être consigné dans la limite de 5&nbsp;% en cas de contestation de conformité. Ces délais sont courts&nbsp;: ne les laissez pas courir.
+      </p>
+      <p>
+        Enfin, gardez à l'esprit ce que le rapport de force implique. En face de vous, des professionnels qui font des réceptions toutes les semaines et connaissent les formulations qui n'engagent à rien. Être accompagné change la nature de la conversation, et souvent le contenu du procès-verbal.
+      </p>
+
+      <div class="signature-article">
+        <img src="assets/stephane-guillain.jpg" alt="">
+        <div>
+          <strong>Stéphane Guillain</strong>
+          <span>Expert bâtiment indépendant — 18 ans de conduite de travaux</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="cote">
+      <div class="cote-carte sommaire-cote">
+        <h2>Dans cet article</h2>
+        <ul>
+          <li><a href="#pourquoi">Pourquoi la rédaction compte</a></li>
+          <li><a href="#trois-elements">Les trois éléments</a></li>
+          <li><a href="#exemples">Exemples avant / après</a></li>
+          <li><a href="#photos">Photographier correctement</a></li>
+          <li><a href="#jour-j">Le jour de la réception</a></li>
+          <li><a href="#apres">Après la réception</a></li>
+        </ul>
+      </div>
+      <div class="cote-carte">
+        <h2>Une réception à venir&nbsp;?</h2>
+        <p>Je peux être présent à vos côtés le jour J et rédiger les réserves avec vous.</p>
+        <a class="btn btn--plein" href="contact.html">Me contacter</a>
+      </div>
+    </aside>
+  </div>
+</div>
+</article>
+
+<section class="bloc bloc--encre final">
+  <div class="contenu">
+    <p class="surtitre">Votre cas est unique</p>
+    <h2>Aucun article ne remplace<br>un regard sur place.</h2>
+    <p class="chapo" style="margin-inline:auto">
+      Ces repères valent pour les situations courantes. Pour votre bien précisément, un échange de quelques minutes vaut mieux que des heures de recherche.
+    </p>
+    <div class="final__actions">
+      <a class="btn btn--blanc" href="tel:+33789526914">Appeler le 07 89 52 69 14</a>
+      <a class="btn btn--fantome" href="blog.html">Revenir au blog</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">SKP Solutions</div>
+        <p>Expertise bâtiment indépendante au service des particuliers. Loire-Atlantique, Vendée et départements limitrophes.</p>
+        <div class="reseaux">
+          <a href="https://www.linkedin.com/company/skpsolutions/" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/skp_solutions" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/18JYyt2Jcp/" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.3 0-4 1.8-4 4V12H7.5v3.5H10V22h3.5v-6.5H16L16.5 12H13.5V9.5c0-.3.2-.5.5-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul>
+          <li><a href="services.html#avant-achat">Expertise avant achat</a></li>
+          <li><a href="services.html#reception">Réception de travaux</a></li>
+          <li><a href="services.html#pathologies">Fissures &amp; humidité</a></li>
+          <li><a href="services.html#amo">Assistance maîtrise d'ouvrage</a></li>
+          <li><a href="services.html#urbanisme">Permis &amp; déclarations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Le cabinet</p>
+        <ul>
+          <li><a href="qui-suis-je.html">Qui suis-je&nbsp;?</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul>
+          <li><a href="tel:+33789526914">07 89 52 69 14</a></li>
+          <li><a href="mailto:contact@skp-solutions.fr">contact@skp-solutions.fr</a></li>
+          <li>ZA Beau Soleil<br>1 rue des Oliviers<br>44680 Sainte-Pazanne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__legal">
+      <p>SKP Solutions S.A.S.U. — capital 2 000 € — RCS Nantes 101 053 403</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre de contact fixe (mobile) -->
+<div class="barre-mobile">
+  <a class="barre-mobile__tel" href="tel:+33789526914">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="barre-mobile__devis" href="contact.html">Demander un devis</a>
+</div>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var ouvert = nav.getAttribute('data-ouvert') === 'true';
+      nav.setAttribute('data-ouvert', String(!ouvert));
+      burger.setAttribute('aria-expanded', String(!ouvert));
+      burger.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.setAttribute('data-ouvert', 'false');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stéphane Guillain, expert bâtiment indépendant | SKP Solutions</title>
+<meta name="description" content="18 ans de bâtiment : Léon Grosse, VINCI Construction, 13 ans ingénieur travaux TCE chez Bouygues Construction sur des opérations de 100 à 500 M€. Aujourd'hui expert indépendant en Loire-Atlantique.">
+<link rel="canonical" href="https://www.skp-solutions.fr/qui-suis-je.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Styles propres à la page Qui suis-je ===== */
+
+/* -- Ouverture -- */
+.ouverture { padding-block: 76px 0; }
+.ouverture__grille {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 68px;
+  align-items: center;
+}
+.ouverture h1 { margin: 18px 0 22px; }
+.ouverture p { color: var(--texte-doux); font-size: 17px; max-width: 56ch; }
+.ouverture p + p { margin-top: 16px; }
+
+.portrait-cadre { position: relative; }
+.portrait-cadre img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+.portrait-cadre::after {
+  content: "";
+  position: absolute;
+  inset: -22px -22px 22px 22px;
+  border: 1.5px solid var(--bleu-trait);
+  border-radius: 10px;
+}
+
+/* -- Repères chiffrés -- */
+.reperes { border-block: 1px solid var(--ligne); margin-top: 80px; }
+.reperes__grille { display: grid; grid-template-columns: repeat(4, 1fr); }
+.reperes__item { padding: 30px 28px 30px 0; border-right: 1px solid var(--ligne); }
+.reperes__item:last-child { border-right: none; }
+.reperes__item:not(:first-child) { padding-left: 28px; }
+.reperes__cle { font-family: var(--titre); font-size: 30px; color: var(--bleu); line-height: 1; margin-bottom: 7px; }
+.reperes__lib { font-size: 14.5px; color: var(--texte-doux); }
+
+/* -- Credo -- */
+.credo { background: var(--bleu); color: var(--blanc); padding-block: 76px; }
+.credo blockquote {
+  font-family: var(--titre);
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.34;
+  margin: 0;
+}
+.credo__grille { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+.credo__texte p { color: rgba(255,255,255,0.75); font-size: 16px; }
+.credo__texte p + p { margin-top: 15px; }
+
+/* -- Parcours -- */
+.jalon {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 40px;
+  padding: 32px 0;
+  border-top: 1px solid var(--ligne);
+}
+.jalon:last-child { border-bottom: 1px solid var(--ligne); }
+.jalon__date {
+  font-family: var(--titre);
+  font-size: 19px;
+  color: var(--bleu);
+  line-height: 1.25;
+  padding-top: 2px;
+}
+.jalon__lieu {
+  display: block;
+  font-family: var(--corps);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--texte-doux);
+  margin-top: 5px;
+}
+.jalon h3 { font-size: 21px; margin-bottom: 9px; }
+.jalon p { color: var(--texte-doux); font-size: 15px; max-width: 68ch; }
+.jalon--actuel { background: var(--bleu-lavis); border-radius: 8px; padding: 32px 24px; }
+
+/* -- Diplômes -- */
+.diplomes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--bleu-trait);
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.diplome { background: var(--blanc); padding: 26px 22px; }
+.diplome__annee { font-family: var(--titre); font-size: 22px; color: var(--bleu); line-height: 1; margin-bottom: 12px; }
+.diplome h3 { font-size: 15.5px; line-height: 1.3; margin-bottom: 8px; }
+.diplome p { font-size: 13.5px; color: var(--texte-doux); line-height: 1.55; }
+
+/* -- Habilitations -- */
+.certifs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.certifs li {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 16px;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 100px;
+  color: var(--blanc);
+}
+
+/* -- Convictions -- */
+.convictions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; }
+.conviction__num { font-family: var(--titre); font-size: 40px; color: var(--bleu-trait); line-height: 1; margin-bottom: 14px; }
+.conviction h3 { font-size: 20px; margin-bottom: 11px; }
+.conviction p { font-size: 15px; color: var(--texte-doux); }
+
+/* -- Témoignages -- */
+.avis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.avis__carte {
+  background: var(--blanc);
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  padding: 30px 28px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.avis__guillemet { font-family: var(--titre); font-size: 48px; color: var(--bleu-trait); line-height: 0.7; margin-bottom: 14px; }
+.avis__carte p { font-size: 15px; line-height: 1.68; flex: 1; }
+.avis__signature { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--ligne); font-size: 13.5px; font-weight: 700; color: var(--bleu); }
+
+/* -- Fiche entreprise -- */
+.fiche { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.fiche__tableau { border: 1px solid var(--bleu-trait); border-radius: 12px; overflow: hidden; background: var(--blanc); }
+.fiche__ligne {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+  padding: 15px 26px;
+  border-bottom: 1px solid var(--ligne);
+  font-size: 15px;
+}
+.fiche__ligne:last-child { border-bottom: none; }
+.fiche__ligne dt { font-weight: 700; }
+.fiche__ligne dd { margin: 0; color: var(--texte-doux); }
+
+/* -- Appel final -- */
+.final { text-align: center; }
+.final__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+
+/* -- Responsive -- */
+@media (max-width: 1080px) {
+  .diplomes { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 980px) {
+  .ouverture { padding-top: 48px; }
+  .ouverture__grille { grid-template-columns: 1fr; gap: 44px; }
+  .portrait-cadre { max-width: 420px; }
+  .portrait-cadre::after { inset: -16px -16px 16px 16px; }
+  .reperes { margin-top: 56px; }
+  .reperes__grille { grid-template-columns: 1fr 1fr; }
+  .reperes__item { border-right: none; padding: 24px 0; border-bottom: 1px solid var(--ligne); }
+  .reperes__item:nth-child(odd) { border-right: 1px solid var(--ligne); padding-right: 24px; }
+  .reperes__item:not(:first-child) { padding-left: 0; }
+  .reperes__item:nth-child(even) { padding-left: 24px; }
+  .reperes__item:nth-last-child(-n+2) { border-bottom: none; }
+  .credo__grille { grid-template-columns: 1fr; gap: 30px; }
+  .jalon { grid-template-columns: 1fr; gap: 12px; padding: 26px 0; }
+  .jalon--actuel { padding: 26px 20px; }
+  .diplomes { grid-template-columns: 1fr 1fr; }
+  .convictions { grid-template-columns: 1fr; gap: 34px; }
+  .avis { grid-template-columns: 1fr; }
+  .fiche { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 620px) {
+  .diplomes { grid-template-columns: 1fr; }
+  .fiche__ligne { grid-template-columns: 1fr; gap: 4px; }
+  .final__actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<a class="saut-contenu" href="#principal">Aller au contenu</a>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="entete">
+  <div class="contenu entete__inner">
+    <a class="marque" href="index.html">
+      <img class="marque__logo" src="assets/logo-skp.png" alt="">
+      <span class="marque__nom">SKP Solutions</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="qui-suis-je.html" aria-current="page">Qui suis-je&nbsp;?</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="references.html">Références</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="tel-entete" href="tel:+33789526914" aria-label="Appeler le 07 89 52 69 14">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn--plein" href="contact.html">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ OUVERTURE ============ -->
+<section class="ouverture">
+  <div class="contenu ouverture__grille">
+    <div>
+      <p class="surtitre">Qui suis-je</p>
+      <h1>J'ai passé 18 ans de l'autre côté.</h1>
+      <p>
+        Chef d'équipe maçons chez Léon Grosse, technicien bureau d'études chez VINCI Construction, puis treize ans ingénieur travaux tous corps d'état chez Bouygues Construction sur des opérations de 100 à 500 millions d'euros. J'ai vu comment on construit, comment on planifie, comment on arbitre&nbsp;— et au bénéfice de qui.
+      </p>
+      <p>
+        Autour de moi, je voyais mes proches désemparés face à leurs projets&nbsp;: achat, construction, rénovation. Leur intérêt n'était presque jamais dans la balance, face à celui de l'agent immobilier, du constructeur ou de l'entreprise. Ajoutez à cela une perte de sens progressive dans les valeurs des grands groupes où je travaillais, et une envie réelle de liberté d'action.
+      </p>
+      <p>
+        J'ai créé SKP Solutions pour accompagner vraiment, sans intérêt caché et en toute indépendance.
+      </p>
+    </div>
+
+    <figure class="portrait-cadre">
+      <img src="assets/stephane-guillain.jpg" alt="Stéphane Guillain, fondateur de SKP Solutions">
+    </figure>
+  </div>
+
+  <!-- Repères chiffrés -->
+  <div class="reperes">
+    <div class="contenu reperes__grille">
+      <div class="reperes__item">
+        <div class="reperes__cle">18 ans</div>
+        <p class="reperes__lib">d'expérience dans le bâtiment</p>
+      </div>
+      <div class="reperes__item">
+        <div class="reperes__cle">+ de 15</div>
+        <p class="reperes__lib">opérations menées entre 100 et 500 M€</p>
+      </div>
+      <div class="reperes__item">
+        <div class="reperes__cle">13 ans</div>
+        <p class="reperes__lib">ingénieur travaux tous corps d'état</p>
+      </div>
+      <div class="reperes__item">
+        <div class="reperes__cle">2026</div>
+        <p class="reperes__lib">création de SKP Solutions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDO ============ -->
+<section class="credo">
+  <div class="contenu credo__grille">
+    <blockquote>
+      «&nbsp;Je ne vends rien, si ce n'est la tranquillité d'être bien accompagné.&nbsp;»
+    </blockquote>
+    <div class="credo__texte">
+      <p>
+        C'est la ligne que je me suis fixée en créant la structure. Sur les chantiers, j'ai vu trop de particuliers accepter un diagnostic gratuit fait par celui-là même qui allait ensuite facturer la réparation.
+      </p>
+      <p>
+        Je ne réalise aucun travaux, je ne touche aucune commission d'apporteur, je n'ai aucun accord avec une agence immobilière ni avec un artisan. C'est une contrainte économique assumée&nbsp;— et la seule garantie réelle que mon avis vaut quelque chose.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARCOURS ============ -->
+<section class="bloc">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Mon parcours</p>
+      <h2>Du mur monté au pilotage d'opération</h2>
+      <p class="chapo">
+        J'ai commencé les mains dans le mortier et j'ai terminé sur des chantiers à plusieurs centaines de millions d'euros. Les deux extrémités du métier servent aujourd'hui la même chose&nbsp;: comprendre ce que je vois dans votre maison.
+      </p>
+    </div>
+
+    <div>
+
+      <article class="jalon">
+        <div class="jalon__date">
+          2008 — 2009
+          <span class="jalon__lieu">Léon Grosse</span>
+        </div>
+        <div>
+          <h3>Chef d'équipe maçons</h3>
+          <p>
+            Le métier par la base. Une année à encadrer une équipe de production, à monter, à couler, à reprendre. C'est là qu'on apprend ce qu'un ouvrage coûte réellement en temps et en effort&nbsp;— et pourquoi certains détails passent à la trappe quand le planning se tend.
+          </p>
+        </div>
+      </article>
+
+      <article class="jalon">
+        <div class="jalon__date">
+          2009 — 2011
+          <span class="jalon__lieu">VINCI Construction</span>
+        </div>
+        <div>
+          <h3>Technicien bureau d'études techniques</h3>
+          <p>
+            Passage de l'exécution à la conception. Étude des ouvrages, quantitatifs, méthodes, économie de la construction. Deux années à comprendre comment un projet se chiffre avant même d'exister&nbsp;— et où se logent les marges et les hypothèses optimistes.
+          </p>
+        </div>
+      </article>
+
+      <article class="jalon">
+        <div class="jalon__date">
+          2013 — 2026
+          <span class="jalon__lieu">Bouygues Construction</span>
+        </div>
+        <div>
+          <h3>Ingénieur travaux tous corps d'état</h3>
+          <p>
+            Treize ans sur des opérations de 100 à 500 millions d'euros&nbsp;: plus de quinze chantiers d'envergure. Coordination de l'ensemble des corps d'état, pilotage des interfaces, contrôle de la conformité, réception des ouvrages. C'est cette expérience qui me permet aujourd'hui de lire un bâtiment en quelques heures.
+          </p>
+        </div>
+      </article>
+
+      <article class="jalon jalon--actuel">
+        <div class="jalon__date">
+          Depuis 2026
+          <span class="jalon__lieu">Sainte-Pazanne (44)</span>
+        </div>
+        <div>
+          <h3>Président de SKP Solutions</h3>
+          <p>
+            Le passage à l'indépendance, pour mettre dix-huit ans de compétences au service de ceux qui en ont le plus besoin&nbsp;: les particuliers, qui achètent ou font construire une fois dans leur vie et n'ont aucun moyen de vérifier ce qu'on leur montre.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIPLÔMES ============ -->
+<section class="bloc bloc--lavis">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Formation</p>
+      <h2>Dix ans d'études, menées en parallèle du terrain</h2>
+      <p class="chapo">
+        Du dessin technique jusqu'à un double diplôme européen de direction de travaux.
+      </p>
+    </div>
+
+    <div class="diplomes">
+      <div class="diplome">
+        <div class="diplome__annee">2009</div>
+        <h3>BEP Technique de l'architecture et de l'habitat</h3>
+        <p>Les fondamentaux du bâti et du dessin technique.</p>
+      </div>
+      <div class="diplome">
+        <div class="diplome__annee">2011</div>
+        <h3>Bac Technicien du bâtiment</h3>
+        <p>Étude et économie de la construction.</p>
+      </div>
+      <div class="diplome">
+        <div class="diplome__annee">2013</div>
+        <h3>BTS Bâtiment</h3>
+        <p>Lycée du Bâtiment Saint-Lambert, Paris XV<sup>e</sup>.</p>
+      </div>
+      <div class="diplome">
+        <div class="diplome__annee">2015</div>
+        <h3>Licence professionnelle</h3>
+        <p>CNAM et ESTP Cachan.</p>
+      </div>
+      <div class="diplome">
+        <div class="diplome__annee">2018</div>
+        <h3>Double Master européen</h3>
+        <p>Sciences et direction de travaux bâtiment. University of Abertay, Dundee, Écosse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HABILITATIONS ============ -->
+<section class="bloc bloc--encre bloc--serre">
+  <div class="contenu">
+    <p class="surtitre">Habilitations à jour</p>
+    <h2>Intervenir en sécurité, partout</h2>
+    <p class="chapo">
+      Une expertise implique de circuler sur des chantiers en activité, d'accéder à des locaux techniques et d'approcher des installations sous tension. Ces habilitations sont la condition pour le faire dans les règles.
+    </p>
+    <ul class="certifs">
+      <li>Habilitation électrique H0-B0</li>
+      <li>H0V</li>
+      <li>BS / BE</li>
+      <li>BF / HF</li>
+      <li>AIPR</li>
+      <li>Sauveteur secouriste du travail</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CONVICTIONS ============ -->
+<section class="bloc">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Ma façon de travailler</p>
+      <h2>Trois principes qui ne bougent pas</h2>
+    </div>
+
+    <div class="convictions">
+      <div class="conviction">
+        <div class="conviction__num">01</div>
+        <h3>Dire non quand c'est non</h3>
+        <p>
+          Il m'arrive de déconseiller une expertise au téléphone parce qu'elle ne se justifie pas, ou de dire à un client que le bien qu'il convoite ne vaut pas le prix demandé. C'est mauvais pour le chiffre d'affaires du mois. C'est exactement ce pour quoi on me paie.
+        </p>
+      </div>
+      <div class="conviction">
+        <div class="conviction__num">02</div>
+        <h3>Parler français, pas technique</h3>
+        <p>
+          Un rapport que vous ne comprenez pas ne vous sert à rien. J'écris pour être lu par quelqu'un qui n'est pas du bâtiment, et je reprends systématiquement le document au téléphone avec vous après l'avoir envoyé.
+        </p>
+      </div>
+      <div class="conviction">
+        <div class="conviction__num">03</div>
+        <h3>Distinguer le grave du gênant</h3>
+        <p>
+          Tout n'est pas alarmant. Une part de mon travail consiste aussi à rassurer&nbsp;: un faïençage d'enduit n'est pas une fissure structurelle, une trace d'humidité ancienne n'est pas une infiltration active. Vous saurez ce qui compte vraiment.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TÉMOIGNAGES ============ -->
+<section class="bloc bloc--lavis">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Ils m'ont fait confiance</p>
+      <h2>Ce qu'en disent mes clients</h2>
+    </div>
+
+    <div class="avis">
+      <blockquote class="avis__carte">
+        <div class="avis__guillemet" aria-hidden="true">“</div>
+        <p>
+          Stéphane a réalisé plusieurs inspections sur mes chantiers, et ses prédictions se sont toujours avérées justes. C'est un professionnel soucieux et engagé, force de proposition et un atout précieux pour la réalisation des travaux. Merci pour votre travail.
+        </p>
+        <footer class="avis__signature">Maître d'ouvrage</footer>
+      </blockquote>
+
+      <blockquote class="avis__carte">
+        <div class="avis__guillemet" aria-hidden="true">“</div>
+        <p>
+          SKP Solutions est une société de conseils qui conjugue efficacité, professionnalisme et expertise. Grâce à toutes ces qualités, nous avons concrétisé notre projet d'acquisition. Merci infiniment.
+        </p>
+        <footer class="avis__signature">C. H. L., acquéreurs</footer>
+      </blockquote>
+
+      <blockquote class="avis__carte">
+        <div class="avis__guillemet" aria-hidden="true">“</div>
+        <p>
+          J'ai fait appel à SKP Solutions pour la réalisation de plans dans le cadre d'un permis modificatif. Je tiens à souligner le grand professionnalisme et la réactivité de M. Guillain&nbsp;: des plans réalisés avec sérieux, précision et dans des délais parfaitement respectés. Une collaboration efficace et rassurante, je recommande sans hésitation.
+        </p>
+        <footer class="avis__signature">Conseillère en immobilier</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FICHE ENTREPRISE ============ -->
+<section class="bloc">
+  <div class="contenu fiche">
+    <div>
+      <p class="surtitre">La structure</p>
+      <h2>SKP Solutions, en clair</h2>
+      <p class="chapo">
+        Une société à associé unique, immatriculée à Nantes, basée à Sainte-Pazanne. Pas de holding, pas de réseau, pas de franchise&nbsp;: quand vous appelez SKP Solutions, vous m'avez au bout du fil.
+      </p>
+      <p class="chapo">
+        J'interviens principalement en Loire-Atlantique et en Vendée, et je me déplace ailleurs en France ou en pays francophone selon la nature de la mission.
+      </p>
+    </div>
+
+    <dl class="fiche__tableau">
+      <div class="fiche__ligne"><dt>Dénomination</dt><dd>SKP Solutions S.A.S.U.</dd></div>
+      <div class="fiche__ligne"><dt>Président</dt><dd>Stéphane Guillain</dd></div>
+      <div class="fiche__ligne"><dt>SIREN</dt><dd>101 053 403</dd></div>
+      <div class="fiche__ligne"><dt>Immatriculation</dt><dd>R.C.S. de Nantes</dd></div>
+      <div class="fiche__ligne"><dt>Capital social</dt><dd>2 000 €</dd></div>
+      <div class="fiche__ligne"><dt>Siège</dt><dd>ZA Beau Soleil, 1 rue des Oliviers, 44680 Sainte-Pazanne</dd></div>
+      <div class="fiche__ligne"><dt>Secteur</dt><dd>Loire-Atlantique, Vendée, France entière selon mission</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ APPEL FINAL ============ -->
+<section class="bloc bloc--encre final">
+  <div class="contenu">
+    <p class="surtitre">Faisons connaissance</p>
+    <h2>Le plus simple, c'est encore<br>de m'appeler.</h2>
+    <p class="chapo" style="margin-inline:auto">
+      Exposez-moi votre situation en quelques minutes. Vous saurez tout de suite si je suis la bonne personne&nbsp;— et si je ne le suis pas, je vous orienterai vers celle qui l'est.
+    </p>
+    <div class="final__actions">
+      <a class="btn btn--blanc" href="tel:+33789526914">Appeler le 07 89 52 69 14</a>
+      <a class="btn btn--fantome" href="references.html">Voir mes références</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">SKP Solutions</div>
+        <p>Expertise bâtiment indépendante au service des particuliers. Loire-Atlantique, Vendée et départements limitrophes.</p>
+        <div class="reseaux">
+          <a href="https://www.linkedin.com/company/skpsolutions/" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/skp_solutions" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/18JYyt2Jcp/" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.3 0-4 1.8-4 4V12H7.5v3.5H10V22h3.5v-6.5H16L16.5 12H13.5V9.5c0-.3.2-.5.5-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul>
+          <li><a href="services.html#avant-achat">Expertise avant achat</a></li>
+          <li><a href="services.html#reception">Réception de travaux</a></li>
+          <li><a href="services.html#pathologies">Fissures &amp; humidité</a></li>
+          <li><a href="services.html#amo">Assistance maîtrise d'ouvrage</a></li>
+          <li><a href="services.html#urbanisme">Permis &amp; déclarations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Le cabinet</p>
+        <ul>
+          <li><a href="qui-suis-je.html">Qui suis-je&nbsp;?</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul>
+          <li><a href="tel:+33789526914">07 89 52 69 14</a></li>
+          <li><a href="mailto:contact@skp-solutions.fr">contact@skp-solutions.fr</a></li>
+          <li>ZA Beau Soleil<br>1 rue des Oliviers<br>44680 Sainte-Pazanne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__legal">
+      <p>SKP Solutions S.A.S.U. — capital 2 000 € — RCS Nantes 101 053 403</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre de contact fixe (mobile) -->
+<div class="barre-mobile">
+  <a class="barre-mobile__tel" href="tel:+33789526914">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="barre-mobile__devis" href="contact.html">Demander un devis</a>
+</div>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var ouvert = nav.getAttribute('data-ouvert') === 'true';
+      nav.setAttribute('data-ouvert', String(!ouvert));
+      burger.setAttribute('aria-expanded', String(!ouvert));
+      burger.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.setAttribute('data-ouvert', 'false');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ma démarche et mes engagements | SKP Solutions</title>
+<meta name="description" content="Indépendance totale, aucune commission, aucun travaux vendu. Les engagements de SKP Solutions, le déroulé d'une mission et ce que je ne fais pas.">
+<link rel="canonical" href="https://www.skp-solutions.fr/a-propos.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Styles propres à la page À propos ===== */
+
+.tete-page { background: var(--bleu); color: var(--blanc); padding-block: 76px 68px; }
+.tete-page h1 { max-width: 19ch; margin-bottom: 20px; }
+.tete-page .chapo { color: rgba(255,255,255,0.75); }
+.tete-page .surtitre { color: rgba(255,255,255,0.6); }
+
+/* -- Engagements -- */
+.engagements { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--ligne); border: 1px solid var(--ligne); border-radius: 12px; overflow: hidden; }
+.engagement { background: var(--blanc); padding: 34px 32px; }
+.engagement__tete { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.engagement__icone {
+  width: 42px; height: 42px;
+  border-radius: 9px;
+  background: var(--bleu-lavis);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+.engagement h3 { font-size: 19px; }
+.engagement p { font-size: 14.5px; color: var(--texte-doux); }
+
+/* -- Ce que je ne fais pas -- */
+.limites__grille { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+.limites-liste { display: grid; gap: 18px; }
+.limites-liste li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.limites-liste li:last-child { border-bottom: none; padding-bottom: 0; }
+.limites-liste svg { flex: 0 0 auto; margin-top: 3px; }
+.limites-liste strong { display: block; font-size: 16px; margin-bottom: 5px; }
+.limites-liste span { font-size: 14.5px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* -- Déroulé détaillé -- */
+.phases { display: grid; gap: 0; }
+.phase {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 40px;
+  padding: 34px 0;
+  border-top: 1px solid var(--ligne);
+}
+.phase:last-child { border-bottom: 1px solid var(--ligne); }
+.phase__num {
+  font-family: var(--titre);
+  font-size: 15px;
+  color: var(--bleu);
+  width: 44px; height: 44px;
+  border: 1.5px solid var(--bleu-trait);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.phase h3 { font-size: 21px; margin-bottom: 10px; }
+.phase p { color: var(--texte-doux); font-size: 15px; max-width: 66ch; }
+.phase__delai {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: var(--bleu-lavis);
+  color: var(--bleu);
+}
+
+/* -- Garanties -- */
+.garanties { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.garantie {
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  padding: 28px 26px;
+  background: var(--blanc);
+}
+.garantie h3 { font-size: 18px; margin-bottom: 10px; }
+.garantie p { font-size: 14.5px; color: var(--texte-doux); }
+
+/* -- Appel final -- */
+.final { text-align: center; }
+.final__actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+
+/* -- Responsive -- */
+@media (max-width: 980px) {
+  .engagements { grid-template-columns: 1fr; }
+  .limites__grille { grid-template-columns: 1fr; gap: 34px; }
+  .phase { grid-template-columns: 1fr; gap: 14px; padding: 26px 0; }
+  .garanties { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .final__actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<a class="saut-contenu" href="#principal">Aller au contenu</a>
+
+<!-- ============ EN-TÊTE ============ -->
+<header class="entete">
+  <div class="contenu entete__inner">
+    <a class="marque" href="index.html">
+      <img class="marque__logo" src="assets/logo-skp.png" alt="">
+      <span class="marque__nom">SKP Solutions</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="qui-suis-je.html">Qui suis-je&nbsp;?</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="a-propos.html" aria-current="page">À propos</a>
+      <a href="references.html">Références</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="entete__actions">
+      <a class="tel-entete" href="tel:+33789526914" aria-label="Appeler le 07 89 52 69 14">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a class="btn btn--plein" href="contact.html">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ BANDEAU ============ -->
+<section class="tete-page">
+  <div class="contenu">
+    <p class="surtitre">Ma démarche</p>
+    <h1>L'indépendance n'est pas un argument. C'est une organisation.</h1>
+    <p class="chapo">
+      Tout le monde se dit indépendant. La question n'est pas ce qu'on affiche, c'est comment on gagne sa vie. Voici précisément ce à quoi je m'engage, comment se déroule une mission, et ce que je refuse de faire.
+    </p>
+  </div>
+</section>
+
+<!-- ============ ENGAGEMENTS ============ -->
+<section class="bloc">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Mes engagements</p>
+      <h2>Quatre règles que je m'impose</h2>
+      <p class="chapo">
+        Elles ne sont pas décoratives&nbsp;: chacune me coûte du chiffre d'affaires, et c'est exactement ce qui les rend crédibles.
+      </p>
+    </div>
+
+    <div class="engagements">
+
+      <div class="engagement">
+        <div class="engagement__tete">
+          <span class="engagement__icone">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </span>
+          <h3>Je ne réalise aucun travaux</h3>
+        </div>
+        <p>
+          Je ne suis ni artisan, ni entreprise générale, ni maître d'œuvre d'exécution. Je ne peux donc jamais avoir intérêt à surestimer un désordre&nbsp;: aucun devis de réparation ne me reviendra.
+        </p>
+      </div>
+
+      <div class="engagement">
+        <div class="engagement__tete">
+          <span class="engagement__icone">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+          </span>
+          <h3>Aucune commission d'apporteur</h3>
+        </div>
+        <p>
+          Je ne touche rien d'un artisan, d'un courtier, d'un diagnostiqueur ou d'une agence immobilière à qui je vous orienterais. Si je vous recommande quelqu'un, c'est parce que son travail est bon.
+        </p>
+      </div>
+
+      <div class="engagement">
+        <div class="engagement__tete">
+          <span class="engagement__icone">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="17" x2="14" y2="17"/></svg>
+          </span>
+          <h3>Un écrit systématique</h3>
+        </div>
+        <p>
+          Aucune mission ne se termine par un avis oral. Vous repartez toujours avec un document daté, photographié et argumenté&nbsp;— le seul type de pièce qui pèse face à un vendeur, un constructeur ou un assureur.
+        </p>
+      </div>
+
+      <div class="engagement">
+        <div class="engagement__tete">
+          <span class="engagement__icone">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#044574" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <h3>C'est moi qui interviens</h3>
+        </div>
+        <p>
+          Pas de sous-traitance, pas d'expert délégué, pas de réseau. La personne que vous avez au téléphone est celle qui montera dans les combles et signera le rapport.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CE QUE JE NE FAIS PAS ============ -->
+<section class="bloc bloc--encre">
+  <div class="contenu limites__grille">
+    <div>
+      <p class="surtitre">Mes limites</p>
+      <h2>Ce que je ne fais pas</h2>
+      <p class="chapo">
+        Un professionnel qui prétend tout couvrir devrait vous inquiéter. Voici les frontières de mon intervention&nbsp;— et vers qui me tourner quand votre besoin se situe au-delà.
+      </p>
+    </div>
+
+    <ul class="limites-liste">
+      <li>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <div>
+          <strong>Les diagnostics réglementaires</strong>
+          <span>DPE, amiante, plomb, termites, électricité, gaz&nbsp;: ce sont des prestations certifiées relevant du diagnostiqueur immobilier. Je les lis et je les recoupe avec mes constats, mais je ne les établis pas.</span>
+        </div>
+      </li>
+      <li>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <div>
+          <strong>L'expertise judiciaire</strong>
+          <span>Je ne suis pas expert inscrit près une cour d'appel. Mes rapports servent en phase amiable et peuvent appuyer un dossier, mais une expertise ordonnée par un tribunal relève d'un expert judiciaire désigné.</span>
+        </div>
+      </li>
+      <li>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <div>
+          <strong>Le conseil juridique</strong>
+          <span>J'établis les faits techniques et je les chiffre. La stratégie contentieuse, la rédaction des actes et la représentation relèvent de votre avocat ou de votre notaire.</span>
+        </div>
+      </li>
+      <li>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <div>
+          <strong>Les études de structure et de sol</strong>
+          <span>Quand un désordre appelle un calcul de reprise ou une reconnaissance géotechnique, je vous oriente vers un bureau d'études spécialisé. Mon rôle est alors de vous dire que c'est nécessaire, et pourquoi.</span>
+        </div>
+      </li>
+      <li>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <div>
+          <strong>Les missions au-delà de 150 m² en neuf</strong>
+          <span>Pour une construction neuve à usage d'habitation dépassant ce seuil de surface de plancher, le recours à un architecte est obligatoire. Je vous le signale dès le premier échange et je travaille volontiers avec le sien.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ DÉROULÉ DÉTAILLÉ ============ -->
+<section class="bloc">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Le déroulé complet</p>
+      <h2>Une mission, de votre appel au suivi</h2>
+      <p class="chapo">
+        Aucune étape n'est facturée en supplément. Ce qui est décrit ci-dessous est inclus dans le devis que vous avez signé.
+      </p>
+    </div>
+
+    <div class="phases">
+
+      <article class="phase">
+        <div class="phase__num" aria-hidden="true">1</div>
+        <div>
+          <h3>L'échange préalable</h3>
+          <p>
+            Vous m'exposez votre situation au téléphone. Je vous pose les questions qui déterminent le périmètre&nbsp;: type de bien, année approximative, ce que vous avez constaté, où vous en êtes juridiquement. À l'issue, je vous dis franchement si une expertise se justifie.
+          </p>
+          <span class="phase__delai">Gratuit — 10 à 15 minutes</span>
+        </div>
+      </article>
+
+      <article class="phase">
+        <div class="phase__num" aria-hidden="true">2</div>
+        <div>
+          <h3>Le devis</h3>
+          <p>
+            Un montant ferme, détaillé, sans clause de révision. Il précise le périmètre exact de la mission, la durée prévue sur place et le délai de remise du rapport. Vous n'êtes engagé qu'à la signature.
+          </p>
+          <span class="phase__delai">Sous 24 heures ouvrées</span>
+        </div>
+      </article>
+
+      <article class="phase">
+        <div class="phase__num" aria-hidden="true">3</div>
+        <div>
+          <h3>L'analyse documentaire</h3>
+          <p>
+            Avant de me déplacer, j'étudie tout ce qui existe&nbsp;: diagnostics obligatoires, plans, cadastre, zonage d'urbanisme, état des risques, historique de propriété. Une anomalie repérée dans un document oriente toute la visite — c'est souvent là que se trouvent les vraies surprises.
+          </p>
+          <span class="phase__delai">Inclus, avant la visite</span>
+        </div>
+      </article>
+
+      <article class="phase">
+        <div class="phase__num" aria-hidden="true">4</div>
+        <div>
+          <h3>La visite</h3>
+          <p>
+            Relevés, mesures, photographies méthodiques. Vous pouvez m'accompagner&nbsp;: c'est souvent le moment le plus utile, celui où vous voyez ce que je vois et où vous posez vos questions en direct.
+          </p>
+          <span class="phase__delai">2 à 4 heures selon la mission</span>
+        </div>
+      </article>
+
+      <article class="phase">
+        <div class="phase__num" aria-hidden="true">5</div>
+        <div>
+          <h3>Le rapport</h3>
+          <p>
+            Un document écrit pour être lu par quelqu'un qui n'est pas du bâtiment&nbsp;: constats photographiés, causes identifiées, désordres hiérarchisés par gravité, travaux chiffrés en HT et en TTC.
+          </p>
+          <span class="phase__delai">7 à 10 jours ouvrés</span>
+        </div>
+      </article>
+
+      <article class="phase">
+        <div class="phase__num" aria-hidden="true">6</div>
+        <div>
+          <h3>Le débriefing et le suivi</h3>
+          <p>
+            On reprend le rapport ensemble au téléphone. Un document technique qu'on ne vous explique pas ne sert pas à grand-chose. Ensuite, je reste joignable pour les questions qui surgiront quand vous l'utiliserez face au vendeur, à l'entreprise ou à l'assureur.
+          </p>
+          <span class="phase__delai">Inclus</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ GARANTIES ============ -->
+<section class="bloc bloc--lavis">
+  <div class="contenu">
+    <div class="entete-bloc">
+      <p class="surtitre">Cadre professionnel</p>
+      <h2>Ce qui encadre mon intervention</h2>
+    </div>
+
+    <div class="garanties">
+      <div class="garantie">
+        <h3>Assurance responsabilité civile professionnelle</h3>
+        <p>
+          SKP Solutions est couverte par une RC professionnelle pour ses missions de conseil et d'expertise. L'attestation vous est communiquée sur simple demande.
+        </p>
+      </div>
+      <div class="garantie">
+        <h3>Référentiel technique</h3>
+        <p>
+          Mes constats s'appuient sur les NF DTU et les règles de l'art applicables, ainsi que sur les normes AFNOR pertinentes selon les ouvrages concernés.
+        </p>
+      </div>
+      <div class="garantie">
+        <h3>Confidentialité</h3>
+        <p>
+          Les rapports et les informations relatives à votre bien restent strictement confidentiels. Aucun document n'est communiqué à un tiers sans votre accord écrit.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPEL FINAL ============ -->
+<section class="bloc bloc--encre final">
+  <div class="contenu">
+    <p class="surtitre">Une question sur la démarche</p>
+    <h2>Posez-la directement.</h2>
+    <p class="chapo" style="margin-inline:auto">
+      Si un point de ma méthode ou de mes engagements mérite d'être précisé avant de me confier une mission, appelez-moi.
+    </p>
+    <div class="final__actions">
+      <a class="btn btn--blanc" href="tel:+33789526914">Appeler le 07 89 52 69 14</a>
+      <a class="btn btn--fantome" href="contact.html">Écrire un message</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">SKP Solutions</div>
+        <p>Expertise bâtiment indépendante au service des particuliers. Loire-Atlantique, Vendée et départements limitrophes.</p>
+        <div class="reseaux">
+          <a href="https://www.linkedin.com/company/skpsolutions/" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/skp_solutions" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/18JYyt2Jcp/" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.3 0-4 1.8-4 4V12H7.5v3.5H10V22h3.5v-6.5H16L16.5 12H13.5V9.5c0-.3.2-.5.5-.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="pied__titre">Prestations</p>
+        <ul>
+          <li><a href="services.html#avant-achat">Expertise avant achat</a></li>
+          <li><a href="services.html#reception">Réception de travaux</a></li>
+          <li><a href="services.html#pathologies">Fissures &amp; humidité</a></li>
+          <li><a href="services.html#amo">Assistance maîtrise d'ouvrage</a></li>
+          <li><a href="services.html#urbanisme">Permis &amp; déclarations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Le cabinet</p>
+        <ul>
+          <li><a href="qui-suis-je.html">Qui suis-je&nbsp;?</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="references.html">Références</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="pied__titre">Contact</p>
+        <ul>
+          <li><a href="tel:+33789526914">07 89 52 69 14</a></li>
+          <li><a href="mailto:contact@skp-solutions.fr">contact@skp-solutions.fr</a></li>
+          <li>ZA Beau Soleil<br>1 rue des Oliviers<br>44680 Sainte-Pazanne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pied__legal">
+      <p>SKP Solutions S.A.S.U. — capital 2 000 € — RCS Nantes 101 053 403</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre de contact fixe (mobile) -->
+<div class="barre-mobile">
+  <a class="barre-mobile__tel" href="tel:+33789526914">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a class="barre-mobile__devis" href="contact.html">Demander un devis</a>
+</div>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var ouvert = nav.getAttribute('data-ouvert') === 'true';
+      nav.setAttribute('data-ouvert', String(!ouvert));
+      burger.setAttribute('aria-expanded', String(!ouvert));
+      burger.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.setAttribute('data-ouvert', 'false');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+IMAGES À DÉPOSER DANS CE DOSSIER
+=================================
+
+Renomme tes photos EXACTEMENT comme ci-dessous, extension comprise.
+
+--- IMAGES GÉNÉRALES ---
+logo-skp.png            -> ton logo SKP (fond transparent)
+blog-fissures.jpg       -> photo de fissure en facade (format paysage 3:2)
+blog-maison-ancienne.jpg-> photo de maison ancienne (format paysage 3:2)
+blog-reserves.jpg       -> photo de reception / chantier fini (format paysage 3:2)
+blog-humidite.jpg       -> photo de trace d'humidite ou salpetre (format paysage 3:2)
+tarifs-appartement.jpg  -> photo d'interieur d'appartement (format paysage 16:9)
+tarifs-maison.jpg       -> photo de maison individuelle (format paysage 16:9)
+stephane-guillain.jpg   -> ton portrait (format portrait 4:5)
+chantier.jpg            -> photo de chantier (format carré)
+secteur.jpg             -> photo de bâti local (format 4:3)
+
+--- IMAGES DE LA PAGE RÉFÉRENCES (format paysage 3:2) ---
+Voici la correspondance avec tes anciennes photos :
+
+ref-01.jpg  <- IMG_6286   La Seine Musicale
+ref-02.jpg  <- IMG_6285   Cathédrale de la Sainte-Trinité
+ref-03.jpg  <- IMG_6876   Morland Mixité Capitale
+ref-04.jpg  <- IMG_6288   Pantin Kanal
+ref-05.jpg  <- IMG_6291   La Chapelle International Lot A
+ref-06.jpg  <- IMG_6290   P17 ORA - Canon
+ref-07.jpg  <- IMG_6289   Siège social Klésia
+ref-08.jpg  <- IMG_6287   Centre commercial Cergy 3 Fontaines
+ref-09.jpg  <- IMG_6298   Préfecture de Police
+ref-10.jpg  <- IMG_6292   Mairie du 13e
+ref-11.jpg  <- IMG_6293   Îlot Adam, Nantes
+ref-12.jpg  <- IMG_6294   Campus Heinlex
+ref-13.jpg  <- IMG_6295   CMPR Saint-Jacques
+
+Si une image manque, la carte reste lisible : seul le visuel apparaîtra vide.

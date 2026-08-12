@@ -1,0 +1,401 @@
+/* ============================================
+   SKP SOLUTIONS — Feuille de style partagée
+   Stéphane Guillain, expert bâtiment indépendant
+   ============================================ */
+
+/* --- 1. TOKENS ------------------------------------------------ */
+
+:root {
+  /* Palette — monochrome bleu, aucune couleur d'accentuation tierce */
+  --bleu:         #044574;
+  --bleu-fonce:   #033355;
+  --bleu-encre:   #022338;
+  --bleu-lavis:   #eef3f8;
+  --bleu-trait:   #cfdde8;
+  --blanc:        #ffffff;
+  --texte:        #1c2b38;
+  --texte-doux:   #566573;
+  --ligne:        #e3e8ed;
+
+  /* Typographie */
+  --titre: 'DM Serif Display', Georgia, serif;
+  --corps: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Rythme */
+  --sect-y: 96px;
+  --gout:   clamp(20px, 5vw, 64px);
+  --max:    1280px;
+  --entete: 96px;
+}
+
+/* --- 2. RESET ------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, h4, p, ul, ol, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+button { font: inherit; cursor: pointer; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--corps);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--texte);
+  background: var(--blanc);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- 3. UTILITAIRES ------------------------------------------- */
+
+.contenu {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gout);
+}
+
+.bloc { padding-block: var(--sect-y); }
+.bloc--lavis  { background: var(--bleu-lavis); }
+.bloc--encre  { background: var(--bleu); color: var(--blanc); }
+.bloc--serre  { padding-block: 64px; }
+
+.saut-contenu {
+  position: absolute;
+  left: -9999px;
+  background: var(--bleu);
+  color: var(--blanc);
+  padding: 12px 20px;
+  z-index: 999;
+}
+.saut-contenu:focus { left: 12px; top: 12px; }
+
+:focus-visible {
+  outline: 2px solid var(--bleu);
+  outline-offset: 3px;
+}
+.bloc--encre :focus-visible { outline-color: var(--blanc); }
+
+/* --- 4. TYPOGRAPHIE ------------------------------------------- */
+
+.surtitre {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bleu);
+  margin-bottom: 14px;
+}
+.bloc--encre .surtitre { color: rgba(255,255,255,0.6); }
+
+h1, h2, h3 { font-family: var(--titre); font-weight: 400; line-height: 1.15; }
+
+h1 { font-size: clamp(34px, 5.2vw, 56px); letter-spacing: -0.01em; }
+h2 { font-size: clamp(28px, 3.8vw, 42px); }
+h3 { font-size: 20px; }
+
+.chapo {
+  font-size: clamp(16px, 1.8vw, 18px);
+  color: var(--texte-doux);
+  max-width: 62ch;
+  margin-top: 18px;
+}
+.bloc--encre .chapo { color: rgba(255,255,255,0.72); }
+
+.entete-bloc { margin-bottom: 56px; max-width: 640px; }
+.entete-bloc--centre { margin-inline: auto; text-align: center; }
+
+/* --- 5. BOUTONS ----------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 15px 30px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+  white-space: nowrap;
+}
+
+.btn--plein  { background: var(--bleu); color: var(--blanc); }
+.btn--plein:hover  { background: var(--bleu-fonce); }
+
+.btn--contour { border-color: var(--bleu-trait); color: var(--bleu); background: var(--blanc); }
+.btn--contour:hover { border-color: var(--bleu); background: var(--bleu-lavis); }
+
+.btn--blanc { background: var(--blanc); color: var(--bleu); }
+.btn--blanc:hover { background: var(--bleu-lavis); }
+
+.btn--fantome { border-color: rgba(255,255,255,0.4); color: var(--blanc); }
+.btn--fantome:hover { border-color: var(--blanc); background: rgba(255,255,255,0.1); }
+
+/* --- 6. EN-TÊTE ----------------------------------------------- */
+
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ligne);
+}
+
+.entete__inner {
+  height: var(--entete);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.marque { display: flex; align-items: center; gap: 12px; text-decoration: none; flex: 0 0 auto; }
+.marque__logo { height: 64px; width: auto; }
+.marque__nom {
+  font-family: var(--titre);
+  font-size: 18px;
+  color: var(--bleu);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.nav { display: flex; align-items: center; gap: 18px; flex-wrap: nowrap; }
+.nav a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--texte);
+  text-decoration: none;
+  padding-block: 6px;
+  border-bottom: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.nav a:hover { color: var(--bleu); }
+.nav a[aria-current="page"] { color: var(--bleu); border-bottom-color: var(--bleu); }
+
+.entete__actions { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; }
+
+.tel-entete {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--bleu);
+  text-decoration: none;
+}
+.tel-entete:hover { text-decoration: underline; }
+.tel-entete svg { flex: 0 0 auto; }
+
+.burger {
+  display: none;
+  width: 44px; height: 44px;
+  background: none;
+  border: 1px solid var(--ligne);
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  color: var(--bleu);
+}
+
+/* --- 7. BARRE MOBILE FIXE ------------------------------------- */
+
+.barre-mobile { display: none; }
+
+/* --- 8. PIED DE PAGE ------------------------------------------ */
+
+.pied {
+  background: var(--bleu-encre);
+  color: rgba(255,255,255,0.72);
+  padding-block: 64px 32px;
+  font-size: 15px;
+}
+.pied a { color: rgba(255,255,255,0.72); text-decoration: none; }
+.pied a:hover { color: var(--blanc); }
+
+.pied__grille {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.pied__titre {
+  font-family: var(--corps);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blanc);
+  margin-bottom: 18px;
+}
+.pied ul li { margin-bottom: 10px; }
+.pied__marque { font-family: var(--titre); font-size: 22px; color: var(--blanc); margin-bottom: 14px; }
+.pied__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  justify-content: space-between;
+  padding-top: 26px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+.pied__legal ul { display: flex; flex-wrap: wrap; gap: 22px; }
+
+.reseaux { display: flex; gap: 12px; margin-top: 18px; }
+.reseaux a {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  transition: border-color .15s ease, background .15s ease;
+}
+.reseaux a:hover { border-color: var(--blanc); background: rgba(255,255,255,0.08); }
+
+/* --- 9. RESPONSIVE -------------------------------------------- */
+
+@media (max-width: 1240px) {
+  :root { --sect-y: 68px; }
+
+  .nav {
+    position: fixed;
+    inset: var(--entete) 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--blanc);
+    border-bottom: 1px solid var(--ligne);
+    padding: 8px var(--gout) 20px;
+    transform: translateY(-120%);
+    transition: transform .25s ease;
+    box-shadow: 0 12px 30px rgba(4,69,116,0.08);
+  }
+  .nav[data-ouvert="true"] { transform: translateY(0); }
+  .nav a { padding: 14px 0; border-bottom: 1px solid var(--ligne); }
+  .nav a[aria-current="page"] { border-bottom-color: var(--ligne); }
+
+  .burger { display: inline-flex; }
+  .tel-entete span { display: none; }
+
+  .pied__grille { grid-template-columns: 1fr 1fr; gap: 36px; }
+
+  /* Barre de contact fixe en bas — l'élément que Wix ne permettait pas */
+  .barre-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 90;
+    background: var(--blanc);
+    border-top: 1px solid var(--ligne);
+    box-shadow: 0 -6px 20px rgba(4,69,116,0.09);
+  }
+  .barre-mobile a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 8px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .barre-mobile__tel { color: var(--bleu); }
+  .barre-mobile__devis { background: var(--bleu); color: var(--blanc); }
+
+  body { padding-bottom: 58px; }
+}
+
+@media (max-width: 560px) {
+  .marque__nom { font-size: 15px; }
+  .marque__logo { height: 48px; }
+  .pied__grille { grid-template-columns: 1fr; }
+}
+
+/* --- 10. PAGES LÉGALES ---------------------------------------- */
+
+.tete-legale {
+  background: var(--bleu);
+  color: var(--blanc);
+  padding-block: 60px 52px;
+}
+.tete-legale h1 { margin-bottom: 14px; }
+.tete-legale p { color: rgba(255,255,255,0.7); font-size: 15px; }
+.tete-legale .surtitre { color: rgba(255,255,255,0.6); }
+
+.legal { max-width: 78ch; padding-block: 72px; }
+.legal > * + * { margin-top: 18px; }
+.legal h2 {
+  font-size: 24px;
+  margin-top: 44px;
+  padding-top: 22px;
+  border-top: 1px solid var(--ligne);
+}
+.legal h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+.legal h3 { font-size: 18px; margin-top: 26px; }
+.legal p { font-size: 15.5px; line-height: 1.78; color: var(--texte-doux); }
+.legal strong { color: var(--texte); font-weight: 700; }
+.legal a { color: var(--bleu); }
+
+.legal ul { display: grid; gap: 10px; padding-left: 2px; }
+.legal ul li {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--texte-doux);
+}
+.legal ul li::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--bleu);
+  margin-top: 11px;
+}
+
+.legal dl {
+  border: 1px solid var(--bleu-trait);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--blanc);
+}
+.legal dl > div {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 18px;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--ligne);
+  font-size: 15px;
+}
+.legal dl > div:last-child { border-bottom: none; }
+.legal dt { font-weight: 700; }
+.legal dd { margin: 0; color: var(--texte-doux); }
+
+.legal .maj {
+  font-size: 13.5px;
+  color: var(--texte-doux);
+  padding: 14px 18px;
+  background: var(--bleu-lavis);
+  border-radius: 8px;
+}
+
+@media (max-width: 620px) {
+  .legal dl > div { grid-template-columns: 1fr; gap: 3px; }
+}
