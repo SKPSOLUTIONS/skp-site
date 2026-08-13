@@ -11,6 +11,8 @@ blog-reserves.jpg       -> photo de reception / chantier fini (format paysage 3:
 blog-humidite.jpg       -> photo de trace d'humidite ou salpetre (format paysage 3:2)
 tarifs-appartement.jpg  -> photo d'interieur d'appartement (format paysage 16:9)
 tarifs-maison.jpg       -> photo de maison individuelle (format paysage 16:9)
+apercu-social.jpg       -> image affichee lors d'un partage du lien (1200 x 630 px)
+                           logo + nom + baseline sur fond bleu #044574 fait tres bien l'affaire
 stephane-guillain.jpg   -> ton portrait (format portrait 4:5)
 chantier.jpg            -> photo de chantier (format carré)
 secteur.jpg             -> photo de bâti local (format 4:3)

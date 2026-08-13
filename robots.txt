@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /mentions-legales.html
+Disallow: /confidentialite.html
+Disallow: /cgv.html
+
+Sitemap: https://skp-solutions.fr/sitemap.xml
